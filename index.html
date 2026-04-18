@@ -4,17 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Magnum Bakes & Cakes — Hayathnagar, Hyderabad</title>
-<meta name="description" content="Magnum Bakes & Cakes — Hayathnagar's finest bakery. Fresh cakes, puffs, biscuits, pizzas, mojitos & more. Custom cakes for every occasion. Call 093466 93818.">
-
-<!-- Google Fonts -->
+<meta name="description" content="Magnum Bakes & Cakes — Hayathnagar's finest bakery. Fresh cakes, puffs, biscuits, pizzas, mojitos & more. Call 093466 93818.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,300;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ============================================================ NAV ============================================================ -->
 <nav id="mainNav">
   <a href="#home" class="nav-logo">
     <div class="nav-logo-icon">🍰</div>
@@ -25,18 +22,17 @@
   </a>
   <div class="nav-links" id="navLinks">
     <a href="#categories">Menu</a>
-    <a href="#bestsellers">Cakes</a>
-    <a href="#biscuits-section">Biscuits</a>
-    <a href="#about">About</a>
     <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
     <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
-    <a href="tel:09346693818" class="nav-cta">📞 Order Now</a>
+    <a href="tel:09346693818" class="nav-cta">📞 Order</a>
   </div>
-  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  <button class="hamburger" onclick="toggleNav()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- ============================================================ HERO ============================================================ -->
 <section class="hero" id="home">
   <div class="hero-content">
     <div class="hero-eyebrow">
@@ -45,9 +41,9 @@
       <div class="eyebrow-line"></div>
     </div>
     <h1 class="hero-h1">Baked with<br><em>Love &amp; Craft</em></h1>
-    <p class="hero-sub">From celebration cakes to golden pastries — every bite carries warmth, care, and Hyderabad's finest ingredients.</p>
+    <p class="hero-sub">From celebration cakes to golden pastries — every bite carries warmth and Hyderabad's finest ingredients.</p>
     <div class="hero-badges">
-      <div class="badge"><div class="badge-dot"></div>Freshly made daily</div>
+      <div class="badge"><div class="badge-dot"></div>Fresh daily</div>
       <div class="badge"><div class="badge-dot"></div>Custom cakes</div>
       <div class="badge"><div class="badge-dot"></div>Dine in &amp; takeaway</div>
     </div>
@@ -58,7 +54,7 @@
   </div>
   <div class="hero-visual">
     <div class="hero-img-wrap">
-      <img src="images/cakes-display.jpeg" alt="Fresh cake display at Magnum Bakes & Cakes">
+      <img src="images/cakes-display.jpeg" alt="Fresh cake display at Magnum Bakes and Cakes" loading="eager">
     </div>
     <div class="hero-img-overlay"></div>
     <div class="hero-float">
@@ -68,148 +64,266 @@
   </div>
 </section>
 
-<!-- ============================================================ TRUST BAR ============================================================ -->
 <div class="trust-bar">
-  <div class="t-item">✓ Made Fresh Every Morning</div>
-  <div class="t-item">♥ Custom Cakes for Every Occasion</div>
-  <div class="t-item">⏰ Open 8am – 10pm Daily</div>
-  <div class="t-item">📍 Old Hayathnagar Rd, Hyderabad</div>
+  <div class="t-item">✓ Fresh Every Morning</div>
+  <div class="t-item">♥ Custom Cakes</div>
+  <div class="t-item">⏰ 8am – 10pm Daily</div>
+  <div class="t-item">📍 Old Hayathnagar Rd</div>
   <div class="t-item">📞 093466 93818</div>
 </div>
 
-<!-- ============================================================ CATEGORIES ============================================================ -->
 <section class="categories" id="categories">
   <div class="cats-header">
     <div>
       <div class="sec-label reveal">What We Make</div>
       <h2 class="sec-title reveal d1">Our <em>Specialties</em></h2>
-      <p class="sec-desc reveal d2">From handcrafted cakes to crispy puffs and refreshing mojitos — all under one roof.</p>
     </div>
-    <a href="#menu" class="btn-primary reveal d3">See Full Menu</a>
+    <a href="#menu" class="btn-primary reveal d2">Full Menu</a>
   </div>
   <div class="cats-grid">
-    <a href="#menu" class="cat-card reveal"   onclick="switchTab('cakes')"><span class="cat-icon">🎂</span><div class="cat-name">Cakes</div><div class="cat-count">15+ varieties</div></a>
-    <a href="#menu" class="cat-card reveal d1" onclick="switchTab('pastries')"><span class="cat-icon">🥐</span><div class="cat-name">Pastries</div><div class="cat-count">Freshly baked</div></a>
-    <a href="#menu" class="cat-card reveal d2" onclick="switchTab('biscuits')"><span class="cat-icon">🍪</span><div class="cat-name">Biscuits</div><div class="cat-count">8+ flavors</div></a>
-    <a href="#menu" class="cat-card reveal d3" onclick="switchTab('puffs')"><span class="cat-icon">🥧</span><div class="cat-name">Puffs</div><div class="cat-count">Crispy &amp; golden</div></a>
-    <a href="#menu" class="cat-card reveal d1" onclick="switchTab('pizza')"><span class="cat-icon">🍕</span><div class="cat-name">Pizzas</div><div class="cat-count">Stone-baked</div></a>
-    <a href="#menu" class="cat-card reveal d2" onclick="switchTab('burgers')"><span class="cat-icon">🍔</span><div class="cat-name">Burgers</div><div class="cat-count">Juicy &amp; fresh</div></a>
-    <a href="#menu" class="cat-card reveal d3" onclick="switchTab('mojitos')"><span class="cat-icon">🍹</span><div class="cat-name">Mojitos</div><div class="cat-count">Cool &amp; refreshing</div></a>
-    <a href="#menu" class="cat-card reveal d4" onclick="switchTab('shakes')"><span class="cat-icon">🥤</span><div class="cat-name">Milkshakes</div><div class="cat-count">Thick &amp; creamy</div></a>
+    <a href="#menu" class="cat-card reveal" onclick="switchTab('cakes')"><span class="cat-icon">🎂</span><div class="cat-name">Cakes</div><div class="cat-count">₹250 – ₹800</div></a>
+    <a href="#menu" class="cat-card reveal d1" onclick="switchTab('pastries')"><span class="cat-icon">🍰</span><div class="cat-name">Pastries</div><div class="cat-count">from ₹40</div></a>
+    <a href="#menu" class="cat-card reveal d2" onclick="switchTab('biscuits')"><span class="cat-icon">🍪</span><div class="cat-name">Biscuits</div><div class="cat-count">₹300/kg</div></a>
+    <a href="#menu" class="cat-card reveal d3" onclick="switchTab('puffs')"><span class="cat-icon">🥧</span><div class="cat-name">Puffs</div><div class="cat-count">from ₹20</div></a>
+    <a href="#menu" class="cat-card reveal" onclick="switchTab('pizza')"><span class="cat-icon">🍕</span><div class="cat-name">Pizzas</div><div class="cat-count">from ₹150</div></a>
+    <a href="#menu" class="cat-card reveal d1" onclick="switchTab('burgers')"><span class="cat-icon">🍔</span><div class="cat-name">Burgers</div><div class="cat-count">from ₹70</div></a>
+    <a href="#menu" class="cat-card reveal d2" onclick="switchTab('mojitos')"><span class="cat-icon">🍹</span><div class="cat-name">Mojitos</div><div class="cat-count">₹60 each</div></a>
+    <a href="#menu" class="cat-card reveal d3" onclick="switchTab('shakes')"><span class="cat-icon">🥤</span><div class="cat-name">Milkshakes</div><div class="cat-count">from ₹80</div></a>
   </div>
 </section>
 
-<!-- ============================================================ CAKE SHOWCASE ============================================================ -->
 <section class="showcase" id="bestsellers">
   <div class="showcase-inner">
     <div class="showcase-img reveal">
-      <img src="images/cakes-display.jpeg" alt="Our fresh cake display — Black Forest, Butterscotch, Pineapple and more">
-      <div class="showcase-badge">
-        <span class="sb-num">15+</span>
-        <span class="sb-txt">Cake Varieties</span>
-      </div>
+      <img src="images/cakes-display.jpeg" alt="Fresh cakes — Blackforest, Butterscotch, Pineapple, Chocolate on display" loading="lazy">
+      <div class="showcase-badge"><span class="sb-num">7+</span><span class="sb-txt">Varieties</span></div>
     </div>
     <div class="showcase-content reveal d2">
       <div class="sec-label">Signature Cakes</div>
-      <h2 class="sec-title">Best-Selling <em>Creations</em></h2>
-      <p class="sec-desc" style="margin-bottom:28px">Crafted to order, finished by hand. From classic Black Forest to vibrant Pineapple — every cake tells its own sweet story.</p>
-
+      <h2 class="sec-title">Our <em>Cakes</em></h2>
+      <p class="sec-desc" style="margin-bottom:20px">Crafted to order, finished by hand. Every cake is a celebration.</p>
+      <div class="price-header-row"><span>Cake</span><span>½kg &nbsp;/&nbsp; 1kg</span></div>
       <div class="cake-list">
-        <div class="cake-row"><div class="ck-info"><span class="ck-name">Black Forest Delight</span><span class="ck-desc">Chocolate sponge, whipped cream, cherries</span></div><span class="ck-price">₹599/½kg</span></div>
-        <div class="cake-row"><div class="ck-info"><span class="ck-name">Butterscotch Dream</span><span class="ck-desc">Caramel cream, praline crunch</span></div><span class="ck-price">₹549/½kg</span></div>
-        <div class="cake-row"><div class="ck-info"><span class="ck-name">Pineapple Fantasy</span><span class="ck-desc">Light sponge, fresh cream, pineapple</span></div><span class="ck-price">₹499/½kg</span></div>
-        <div class="cake-row"><div class="ck-info"><span class="ck-name">Chocolate Truffle</span><span class="ck-desc">Dense ganache, velvet finish</span></div><span class="ck-price">₹649/½kg</span></div>
-        <div class="cake-row"><div class="ck-info"><span class="ck-name">Red Velvet</span><span class="ck-desc">Classic with cream cheese frosting</span></div><span class="ck-price">₹699/½kg</span></div>
-        <div class="cake-row highlight"><div class="ck-info"><span class="ck-name">🎨 Designer Custom Cake</span><span class="ck-desc">Your theme, our craft — call to order</span></div><span class="ck-price">₹799+/kg</span></div>
+        <div class="cake-row"><span class="ck-name">Pineapple</span><span class="ck-price">₹250 / ₹500</span></div>
+        <div class="cake-row"><span class="ck-name">Butterscotch</span><span class="ck-price">₹275 / ₹550</span></div>
+        <div class="cake-row"><span class="ck-name">Blackforest</span><span class="ck-price">₹300 / ₹600</span></div>
+        <div class="cake-row"><span class="ck-name">Chocolate</span><span class="ck-price">₹400 / ₹800</span></div>
+        <div class="cake-row"><span class="ck-name">Honey Almond</span><span class="ck-price">₹400 / ₹800</span></div>
+        <div class="cake-row"><span class="ck-name">Blueberry</span><span class="ck-price">₹400 / ₹800</span></div>
+        <div class="cake-row"><span class="ck-name">Red Velvet</span><span class="ck-price">₹400 / ₹800</span></div>
       </div>
-      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+      <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
         <a href="tel:09346693818" class="btn-primary">Order by Phone</a>
-        <a href="https://wa.me/919346693818" target="_blank" class="btn-outline-dark">WhatsApp Order</a>
+        <a href="https://wa.me/919346693818" target="_blank" class="btn-outline-dark">WhatsApp</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ BISCUITS SECTION ============================================================ -->
 <section class="biscuits-section" id="biscuits-section">
   <div class="biscuits-inner">
     <div class="biscuits-content reveal">
-      <div class="sec-label" style="color:var(--gold-lt)">Freshly Baked Daily</div>
-      <h2 class="sec-title" style="color:var(--cream)">Artisan <em>Biscuits</em> &amp; Cookies</h2>
-      <p class="sec-desc" style="color:rgba(250,240,220,.6);margin-bottom:32px">Hyderabad's favourites — from classic Osmani to premium Chocolate Kaju. Baked fresh, sold by weight.</p>
+      <div class="sec-label" style="color:var(--gold-lt)">Baked Fresh Daily</div>
+      <h2 class="sec-title" style="color:var(--cream)">Artisan <em>Biscuits</em></h2>
+      <p class="sec-desc" style="color:rgba(250,240,220,.6);margin-bottom:22px">Hyderabad's favourites — sold by weight, baked fresh every morning.</p>
       <div class="biscuit-grid">
-        <div class="bis-item"><span class="bi-icon">🍪</span><span class="bi-name">Choco Chip</span><span class="bi-price">₹320/kg</span></div>
-        <div class="bis-item"><span class="bi-icon">🥮</span><span class="bi-name">Butterscotch</span><span class="bi-price">₹280/kg</span></div>
-        <div class="bis-item"><span class="bi-icon">🌙</span><span class="bi-name">Chand Biscuits</span><span class="bi-price">₹260/kg</span></div>
-        <div class="bis-item"><span class="bi-icon">🧂</span><span class="bi-name">Salt Biscuits</span><span class="bi-price">₹240/kg</span></div>
-        <div class="bis-item"><span class="bi-icon">⭐</span><span class="bi-name">Osmani</span><span class="bi-price">₹260/kg</span></div>
-        <div class="bis-item"><span class="bi-icon">🥥</span><span class="bi-name">Coconut Butter</span><span class="bi-price">₹270/kg</span></div>
-        <div class="bis-item featured"><span class="bi-icon">🌰</span><span class="bi-name">Chocolate Kaju</span><span class="bi-price">₹400/kg</span></div>
-        <div class="bis-item featured"><span class="bi-icon">🫚</span><span class="bi-name">Badam</span><span class="bi-price">₹380/kg</span></div>
-        <div class="bis-item featured"><span class="bi-icon">💚</span><span class="bi-name">Pista</span><span class="bi-price">₹380/kg</span></div>
+        <div class="bis-item"><span class="bi-name">Osmania</span><span class="bi-price">₹300/kg</span></div>
+        <div class="bis-item"><span class="bi-name">Salt</span><span class="bi-price">₹300/kg</span></div>
+        <div class="bis-item"><span class="bi-name">Chand</span><span class="bi-price">₹320/kg</span></div>
+        <div class="bis-item"><span class="bi-name">Badam</span><span class="bi-price">₹320/kg</span></div>
+        <div class="bis-item"><span class="bi-name">Vanilla</span><span class="bi-price">₹320/kg</span></div>
+        <div class="bis-item"><span class="bi-name">Choco Chip</span><span class="bi-price">₹320/kg</span></div>
+        <div class="bis-item featured"><span class="bi-name">Pista</span><span class="bi-price">₹320/kg</span></div>
+        <div class="bis-item featured"><span class="bi-name">Choc Kaju</span><span class="bi-price">₹320/kg</span></div>
+        <div class="bis-item featured"><span class="bi-name">Butterscotch</span><span class="bi-price">₹320/kg</span></div>
+        <div class="bis-item featured"><span class="bi-name">Almond</span><span class="bi-price">₹320/kg</span></div>
       </div>
     </div>
     <div class="biscuits-img reveal d2">
-      <img src="images/biscuits.jpeg" alt="Freshly baked biscuits and cookies at Magnum — Osmani, Choco Chip, Butterscotch, Pista and more">
-      <div class="biscuits-label">Fresh from our oven</div>
+      <img src="images/biscuits.jpeg" alt="Freshly baked biscuits counter — Osmani, Choco Chip, Butterscotch, Pista, Badam varieties" loading="lazy">
+      <div class="biscuits-label">Fresh from our oven · Per Kg pricing</div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ SNACKS ============================================================ -->
-<section class="snacks" id="snacks">
-  <div class="sec-label reveal" style="text-align:center">Hot &amp; Crispy</div>
-  <h2 class="sec-title reveal d1" style="text-align:center;margin-bottom:8px">Puffs, Pizzas <em>&amp; More</em></h2>
-  <p class="sec-desc reveal d2" style="text-align:center;margin:0 auto 44px;max-width:480px">Made to order — because every ingredient is fresh from our kitchen.</p>
-  <div class="snacks-grid">
-    <div class="snack-card reveal"><div class="sk-icon">🥧</div><div class="sk-name">Veg Puff</div><div class="sk-desc">Crispy golden pastry, spiced filling</div><div class="sk-price">₹20</div></div>
-    <div class="snack-card reveal d1"><div class="sk-icon">🥚</div><div class="sk-name">Egg Puff</div><div class="sk-desc">Flaky shell, whole egg inside</div><div class="sk-price">₹25</div></div>
-    <div class="snack-card reveal d2"><div class="sk-icon">🍗</div><div class="sk-name">Chicken Puff</div><div class="sk-desc">Tender chicken, spiced masala</div><div class="sk-price">₹35</div></div>
-    <div class="snack-card reveal d3"><div class="sk-icon">🍔</div><div class="sk-name">Veg Burger</div><div class="sk-desc">Fresh veggies, house sauce</div><div class="sk-price">₹80</div></div>
-    <div class="snack-card reveal"><div class="sk-icon">🍗</div><div class="sk-name">Chicken Burger</div><div class="sk-desc">Grilled patty, crispy lettuce</div><div class="sk-price">₹120</div></div>
-    <div class="snack-card reveal d1"><div class="sk-icon">🌯</div><div class="sk-name">Veg Frankie</div><div class="sk-desc">Rolled wrap, tangy masala</div><div class="sk-price">₹70</div></div>
-    <div class="snack-card reveal d2"><div class="sk-icon">🍕</div><div class="sk-name">Veg Margherita</div><div class="sk-desc">Tomato, mozzarella, basil</div><div class="sk-price">₹149</div></div>
-    <div class="snack-card reveal d3"><div class="sk-icon">🍟</div><div class="sk-name">French Fries</div><div class="sk-desc">Crispy golden, seasoned salt</div><div class="sk-price">₹60</div></div>
+<section class="menu-section" id="menu">
+  <div class="menu-header reveal">
+    <div class="sec-label">Complete Menu</div>
+    <h2 class="sec-title">Everything We <em>Offer</em></h2>
+    <p class="sec-desc">Real prices, freshly made. Tap a category below.</p>
+  </div>
+  <div class="menu-tabs" id="menuTabs">
+    <button class="menu-tab active" data-tab="cakes"      onclick="switchTab('cakes')">🎂 Cakes</button>
+    <button class="menu-tab"        data-tab="pastries"   onclick="switchTab('pastries')">🍰 Pastries</button>
+    <button class="menu-tab"        data-tab="biscuits"   onclick="switchTab('biscuits')">🍪 Biscuits</button>
+    <button class="menu-tab"        data-tab="puffs"      onclick="switchTab('puffs')">🥧 Puffs</button>
+    <button class="menu-tab"        data-tab="pizza"      onclick="switchTab('pizza')">🍕 Pizza</button>
+    <button class="menu-tab"        data-tab="burgers"    onclick="switchTab('burgers')">🍔 Burgers</button>
+    <button class="menu-tab"        data-tab="sandwiches" onclick="switchTab('sandwiches')">🥪 Sandwiches</button>
+    <button class="menu-tab"        data-tab="frankies"   onclick="switchTab('frankies')">🌯 Frankies</button>
+    <button class="menu-tab"        data-tab="snacks"     onclick="switchTab('snacks')">🍟 Mini Snacks</button>
+    <button class="menu-tab"        data-tab="fried"      onclick="switchTab('fried')">🍗 Fried Snacks</button>
+    <button class="menu-tab"        data-tab="mojitos"    onclick="switchTab('mojitos')">🍹 Mojitos</button>
+    <button class="menu-tab"        data-tab="shakes"     onclick="switchTab('shakes')">🥤 Milkshakes</button>
+  </div>
+
+  <div id="cakes" class="menu-panel active">
+    <div class="menu-panel-header">
+      <img src="images/cakes-display.jpeg" alt="Cakes counter" class="menu-panel-img" loading="lazy">
+      <div class="menu-panel-info"><h3>🎂 Cakes</h3><p>Available in ½kg and 1kg. Custom orders welcome!</p></div>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item"><div class="mi-name">Pineapple</div><div class="mi-price">₹250 / ₹500</div></div>
+      <div class="menu-item"><div class="mi-name">Butterscotch</div><div class="mi-price">₹275 / ₹550</div></div>
+      <div class="menu-item"><div class="mi-name">Blackforest</div><div class="mi-price">₹300 / ₹600</div></div>
+      <div class="menu-item"><div class="mi-name">Chocolate</div><div class="mi-price">₹400 / ₹800</div></div>
+      <div class="menu-item"><div class="mi-name">Honey Almond</div><div class="mi-price">₹400 / ₹800</div></div>
+      <div class="menu-item"><div class="mi-name">Blueberry</div><div class="mi-price">₹400 / ₹800</div></div>
+      <div class="menu-item"><div class="mi-name">Red Velvet</div><div class="mi-price">₹400 / ₹800</div></div>
+    </div>
+  </div>
+
+  <div id="pastries" class="menu-panel">
+    <div class="menu-items">
+      <div class="menu-item"><div class="mi-name">Pineapple Pastry</div><div class="mi-price">₹40</div></div>
+      <div class="menu-item"><div class="mi-name">Butterscotch Pastry</div><div class="mi-price">₹45</div></div>
+      <div class="menu-item"><div class="mi-name">Blackforest Pastry</div><div class="mi-price">₹55</div></div>
+      <div class="menu-item"><div class="mi-name">Chocolate Pastry</div><div class="mi-price">₹70</div></div>
+      <div class="menu-item"><div class="mi-name">Choco Lava</div><div class="mi-price">₹70</div></div>
+      <div class="menu-item"><div class="mi-name">Honey Almond</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Rasamalai</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Blue Berry</div><div class="mi-price">₹70</div></div>
+      <div class="menu-item"><div class="mi-name">Donut</div><div class="mi-price">₹45</div></div>
+    </div>
+  </div>
+
+  <div id="biscuits" class="menu-panel">
+    <div class="menu-panel-header">
+      <img src="images/biscuits.jpeg" alt="Biscuits counter" class="menu-panel-img" loading="lazy">
+      <div class="menu-panel-info"><h3>🍪 Biscuits</h3><p>All priced per kilogram. Bulk orders available.</p></div>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item"><div class="mi-name">Osmania</div><div class="mi-price">₹300/kg</div></div>
+      <div class="menu-item"><div class="mi-name">Salt</div><div class="mi-price">₹300/kg</div></div>
+      <div class="menu-item"><div class="mi-name">Chand</div><div class="mi-price">₹320/kg</div></div>
+      <div class="menu-item"><div class="mi-name">Badam</div><div class="mi-price">₹320/kg</div></div>
+      <div class="menu-item"><div class="mi-name">Vanilla</div><div class="mi-price">₹320/kg</div></div>
+      <div class="menu-item"><div class="mi-name">Choco Chip</div><div class="mi-price">₹320/kg</div></div>
+      <div class="menu-item"><div class="mi-name">Pista</div><div class="mi-price">₹320/kg</div></div>
+      <div class="menu-item"><div class="mi-name">Chocolate Kaju</div><div class="mi-price">₹320/kg</div></div>
+      <div class="menu-item"><div class="mi-name">Butterscotch</div><div class="mi-price">₹320/kg</div></div>
+      <div class="menu-item"><div class="mi-name">Almond</div><div class="mi-price">₹320/kg</div></div>
+    </div>
+  </div>
+
+  <div id="puffs" class="menu-panel">
+    <div class="menu-items">
+      <div class="menu-item"><div class="mi-name">Veg Puff</div><div class="mi-price">₹20</div></div>
+      <div class="menu-item"><div class="mi-name">Egg Puff</div><div class="mi-price">₹25</div></div>
+      <div class="menu-item"><div class="mi-name">Full Egg Puff</div><div class="mi-price">₹30</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Puff</div><div class="mi-price">₹30</div></div>
+      <div class="menu-item"><div class="mi-name">Panner Puff</div><div class="mi-price">₹30</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Tikka Puff</div><div class="mi-price">₹40</div></div>
+      <div class="menu-item"><div class="mi-name">Panner Tikka Puff</div><div class="mi-price">₹40</div></div>
+    </div>
+  </div>
+
+  <div id="pizza" class="menu-panel">
+    <div class="menu-items">
+      <div class="menu-item"><div class="mi-name">Cheese Pizza</div><div class="mi-price">₹150</div></div>
+      <div class="menu-item"><div class="mi-name">Veg Delight Pizza</div><div class="mi-price">₹170</div></div>
+      <div class="menu-item"><div class="mi-name">Sweet Corn Pizza</div><div class="mi-price">₹180</div></div>
+      <div class="menu-item"><div class="mi-name">Paneer Pizza</div><div class="mi-price">₹200</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Pizza</div><div class="mi-price">₹200</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Sweet Corn Pizza</div><div class="mi-price">₹220</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Tikka Pizza</div><div class="mi-price">₹250</div></div>
+      <div class="menu-item"><div class="mi-name">Veg Mexican Pizza</div><div class="mi-price">₹270</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Mexican Pizza</div><div class="mi-price">₹290</div></div>
+    </div>
+  </div>
+
+  <div id="burgers" class="menu-panel">
+    <div class="menu-items">
+      <div class="menu-item"><div class="mi-name">Crispy Veg Burger</div><div class="mi-price">₹70</div></div>
+      <div class="menu-item"><div class="mi-name">Paneer Burger</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Crispy Chicken Burger</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Tikka Burger</div><div class="mi-price">₹90</div></div>
+      <div class="menu-item"><div class="mi-name">Veg Hot Dog</div><div class="mi-price">₹70</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Hot Dog</div><div class="mi-price">₹80</div></div>
+    </div>
+  </div>
+
+  <div id="sandwiches" class="menu-panel">
+    <div class="menu-items">
+      <div class="menu-item"><div class="mi-name">Veg Grilled Sandwich</div><div class="mi-price">₹70</div></div>
+      <div class="menu-item"><div class="mi-name">Paneer Grilled Sandwich</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Grilled Sandwich</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Tikka Grilled Sandwich</div><div class="mi-price">₹90</div></div>
+    </div>
+  </div>
+
+  <div id="frankies" class="menu-panel">
+    <div class="menu-items">
+      <div class="menu-item"><div class="mi-name">Veg Frankie</div><div class="mi-price">₹70</div></div>
+      <div class="menu-item"><div class="mi-name">Paneer Frankie</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Frankie</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Tikka Frankie</div><div class="mi-price">₹90</div></div>
+    </div>
+  </div>
+
+  <div id="snacks" class="menu-panel">
+    <div class="menu-items">
+      <div class="menu-item"><div class="mi-name">Veg Spring Roll</div><div class="mi-price">₹70</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Spring Roll</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">French Fries Salted</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">French Fries Peri Peri</div><div class="mi-price">₹90</div></div>
+      <div class="menu-item"><div class="mi-name">Veg Strips (3pc)</div><div class="mi-price">₹59</div></div>
+      <div class="menu-item"><div class="mi-name">Veg Strips (6pc)</div><div class="mi-price">₹119</div></div>
+    </div>
+  </div>
+
+  <div id="fried" class="menu-panel">
+    <div class="menu-items">
+      <div class="menu-item"><div class="mi-name">Chicken Popcorn (Regular)</div><div class="mi-price">₹99</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Popcorn (Medium)</div><div class="mi-price">₹149</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Wings (3pcs)</div><div class="mi-price">₹79</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Wings (6pcs)</div><div class="mi-price">₹149</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Lollipops (3pcs)</div><div class="mi-price">₹89</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Lollipops (6pcs)</div><div class="mi-price">₹159</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Boneless Strips (3pcs)</div><div class="mi-price">₹89</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Boneless Strips (6pcs)</div><div class="mi-price">₹159</div></div>
+      <div class="menu-item"><div class="mi-name">Chicken Drumsticks (1pc)</div><div class="mi-price">₹69</div></div>
+    </div>
+  </div>
+
+  <div id="mojitos" class="menu-panel">
+    <div class="menu-items">
+      <div class="menu-item"><div class="mi-name">Lime Mojito</div><div class="mi-price">₹60</div></div>
+      <div class="menu-item"><div class="mi-name">Green Mint Mojito</div><div class="mi-price">₹60</div></div>
+      <div class="menu-item"><div class="mi-name">Blue Ocean Mojito</div><div class="mi-price">₹60</div></div>
+      <div class="menu-item"><div class="mi-name">Strawberry Mojito</div><div class="mi-price">₹60</div></div>
+      <div class="menu-item"><div class="mi-name">Black Current Mojito</div><div class="mi-price">₹60</div></div>
+      <div class="menu-item"><div class="mi-name">Rose Mojito</div><div class="mi-price">₹60</div></div>
+      <div class="menu-item"><div class="mi-name">Pineapple Mojito</div><div class="mi-price">₹60</div></div>
+    </div>
+  </div>
+
+  <div id="shakes" class="menu-panel">
+    <div class="menu-items">
+      <div class="menu-item"><div class="mi-name">Pine Apple</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Butterscotch</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Strawberry</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Chocolate</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Mango</div><div class="mi-price">₹90</div></div>
+      <div class="menu-item"><div class="mi-name">Black Current</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Blueberry</div><div class="mi-price">₹90</div></div>
+      <div class="menu-item"><div class="mi-name">Honey Almond</div><div class="mi-price">₹100</div></div>
+      <div class="menu-item"><div class="mi-name">Orange</div><div class="mi-price">₹80</div></div>
+      <div class="menu-item"><div class="mi-name">Oreo</div><div class="mi-price">₹80</div></div>
+    </div>
   </div>
 </section>
 
-<!-- ============================================================ ABOUT ============================================================ -->
-<section class="about" id="about">
-  <div class="about-imgs reveal">
-    <div class="a-img1">
-      <img src="images/interior.jpeg" alt="Magnum Bakes & Cakes — bright, clean dine-in interior with display counters">
-    </div>
-    <div class="a-img2">
-      <img src="images/storefront.jpeg" alt="Magnum Bakes & Cakes storefront — Hayathnagar, Hyderabad">
-    </div>
-    <div class="a-badge"><strong>★ 4.5</strong><span>Google Reviews</span></div>
-  </div>
-  <div class="reveal d2">
-    <div class="sec-label">Our Story</div>
-    <h2 class="sec-title" style="color:var(--cream)">More Than Just a <em>Bakery</em></h2>
-    <p class="sec-desc" style="color:rgba(250,240,220,.58);max-width:100%;margin-bottom:30px">Magnum Bakes &amp; Cakes was born in the heart of Hayathnagar with one belief — great food made with care changes how people feel. We bake every morning, fresh, for our community.</p>
-    <div class="about-points">
-      <div class="about-point">
-        <div class="ap-icon">🧑‍🍳</div>
-        <div class="ap-text"><strong>Freshly Baked Every Day</strong><span>Nothing sits overnight. Our display fills up each morning with freshly baked goods.</span></div>
-      </div>
-      <div class="about-point">
-        <div class="ap-icon">🎂</div>
-        <div class="ap-text"><strong>Custom Cakes for Every Occasion</strong><span>Birthday, wedding, anniversary — we craft cakes that tell your story.</span></div>
-      </div>
-      <div class="about-point">
-        <div class="ap-icon">💎</div>
-        <div class="ap-text"><strong>Premium Quality, Always</strong><span>Quality dairy, real fruits, no shortcuts — we never compromise on freshness.</span></div>
-      </div>
-      <div class="about-point">
-        <div class="ap-icon">🍕</div>
-        <div class="ap-text"><strong>Pizza · Burgers · Chaat · Juice</strong><span>More than a bakery — your complete neighbourhood food destination.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ GALLERY ============================================================ -->
 <section class="gallery" id="gallery">
   <div class="gallery-header reveal">
     <div class="sec-label">From Our Counter</div>
@@ -217,195 +331,80 @@
   </div>
   <div class="gallery-grid">
     <div class="g-item g-wide">
-      <img src="images/cakes-display.jpeg" alt="Cake display — Black Forest, Butterscotch, Pineapple cakes and more">
+      <img src="images/cakes-display.jpeg" alt="Cake display — Blackforest, Butterscotch, Pineapple and more" loading="lazy">
       <div class="g-caption">Our Cake Counter</div>
     </div>
     <div class="g-item">
-      <img src="images/biscuits.jpeg" alt="Fresh biscuit counter — Osmani, Choco Chip, Badam, Pista varieties">
+      <img src="images/biscuits.jpeg" alt="Fresh biscuit counter — Osmani, Choco Chip, Badam, Pista" loading="lazy">
       <div class="g-caption">Artisan Biscuits</div>
     </div>
     <div class="g-item">
-      <img src="images/interior.jpeg" alt="Clean dine-in area with display counters">
+      <img src="images/interior.jpeg" alt="Bright dine-in area with display counters" loading="lazy">
       <div class="g-caption">Dine-In Space</div>
     </div>
     <div class="g-item g-wide">
-      <img src="images/storefront.jpeg" alt="Magnum Bakes & Cakes — lit up storefront at Hayathnagar">
+      <img src="images/storefront.jpeg" alt="Magnum Bakes and Cakes storefront at Hayathnagar" loading="lazy">
       <div class="g-caption">Our Store · Hayathnagar</div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ FULL MENU ============================================================ -->
-<section class="menu-section" id="menu">
-  <div class="menu-header reveal">
-    <div class="sec-label">Complete Menu</div>
-    <h2 class="sec-title">Everything We <em>Offer</em></h2>
-    <p class="sec-desc">Freshly priced, honestly made. Tap a category below.</p>
+<section class="about" id="about">
+  <div class="about-imgs reveal">
+    <div class="a-img1"><img src="images/interior.jpeg" alt="Magnum Bakes interior — clean dine-in area" loading="lazy"></div>
+    <div class="a-img2"><img src="images/storefront.jpeg" alt="Magnum Bakes storefront" loading="lazy"></div>
+    <div class="a-badge"><strong>★ 4.5</strong><span>Google</span></div>
   </div>
-  <div class="menu-tabs">
-    <button class="menu-tab active" data-tab="cakes"      onclick="switchTab('cakes')">Cakes</button>
-    <button class="menu-tab"        data-tab="pastries"   onclick="switchTab('pastries')">Pastries</button>
-    <button class="menu-tab"        data-tab="biscuits"   onclick="switchTab('biscuits')">Biscuits</button>
-    <button class="menu-tab"        data-tab="puffs"      onclick="switchTab('puffs')">Puffs</button>
-    <button class="menu-tab"        data-tab="pizza"      onclick="switchTab('pizza')">Pizza</button>
-    <button class="menu-tab"        data-tab="burgers"    onclick="switchTab('burgers')">Burgers</button>
-    <button class="menu-tab"        data-tab="sandwiches" onclick="switchTab('sandwiches')">Sandwiches</button>
-    <button class="menu-tab"        data-tab="fries"      onclick="switchTab('fries')">Fries &amp; Snacks</button>
-    <button class="menu-tab"        data-tab="mojitos"    onclick="switchTab('mojitos')">Mojitos</button>
-    <button class="menu-tab"        data-tab="shakes"     onclick="switchTab('shakes')">Milkshakes</button>
-    <button class="menu-tab"        data-tab="frankies"   onclick="switchTab('frankies')">Frankies</button>
-  </div>
-
-  <div id="cakes" class="menu-panel active">
-    <div class="menu-item"><div><div class="mi-name">Black Forest Cake</div><div class="mi-desc">Chocolate sponge, whipped cream, cherries</div></div><div class="mi-price">₹599/½kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Butterscotch Cake</div><div class="mi-desc">Caramel cream, praline crunch</div></div><div class="mi-price">₹549/½kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Pineapple Cake</div><div class="mi-desc">Light sponge, fresh cream, pineapple</div></div><div class="mi-price">₹499/½kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Chocolate Truffle</div><div class="mi-desc">Dense chocolate ganache, velvet finish</div></div><div class="mi-price">₹649/½kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Red Velvet</div><div class="mi-desc">Classic red velvet, cream cheese frosting</div></div><div class="mi-price">₹699/½kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Mango Delight</div><div class="mi-desc">Seasonal mango cream, sponge layers</div></div><div class="mi-price">₹579/½kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Strawberry Cream</div><div class="mi-desc">Fresh strawberry, whipped layers</div></div><div class="mi-price">₹579/½kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Designer Custom Cake</div><div class="mi-desc">Your theme, our craft — call to order</div></div><div class="mi-price">₹799+/kg</div></div>
-  </div>
-  <div id="pastries" class="menu-panel">
-    <div class="menu-item"><div><div class="mi-name">Chocolate Pastry</div><div class="mi-desc">Rich chocolate cream slice</div></div><div class="mi-price">₹60</div></div>
-    <div class="menu-item"><div><div class="mi-name">Pineapple Pastry</div><div class="mi-desc">Fresh cream, pineapple sponge</div></div><div class="mi-price">₹55</div></div>
-    <div class="menu-item"><div><div class="mi-name">Butterscotch Pastry</div><div class="mi-desc">Caramel cream slice</div></div><div class="mi-price">₹60</div></div>
-    <div class="menu-item"><div><div class="mi-name">Red Velvet Pastry</div><div class="mi-desc">Classic red velvet slice</div></div><div class="mi-price">₹70</div></div>
-    <div class="menu-item"><div><div class="mi-name">Mango Pastry</div><div class="mi-desc">Seasonal special</div></div><div class="mi-price">₹65</div></div>
-  </div>
-  <div id="biscuits" class="menu-panel">
-    <div class="menu-item"><div><div class="mi-name">Choco Chip Cookies</div><div class="mi-desc">Chunky chocolate chips, crispy edge</div></div><div class="mi-price">₹320/kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Butterscotch Biscuits</div><div class="mi-desc">Caramel sweet, melt-in-mouth</div></div><div class="mi-price">₹280/kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Chand Biscuits</div><div class="mi-desc">Traditional butter shortbread</div></div><div class="mi-price">₹260/kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Salt Biscuits</div><div class="mi-desc">Lightly salted, crunchy</div></div><div class="mi-price">₹240/kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Osmani Biscuits</div><div class="mi-desc">Hyderabad's classic</div></div><div class="mi-price">₹260/kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Coconut Butter Biscuits</div><div class="mi-desc">Coconut infused, golden bake</div></div><div class="mi-price">₹270/kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Chocolate Kaju</div><div class="mi-desc">Cashew + chocolate luxury</div></div><div class="mi-price">₹400/kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Badam Biscuits</div><div class="mi-desc">Almond enriched, premium</div></div><div class="mi-price">₹380/kg</div></div>
-    <div class="menu-item"><div><div class="mi-name">Pista Biscuits</div><div class="mi-desc">Pistachio flavored, festive</div></div><div class="mi-price">₹380/kg</div></div>
-  </div>
-  <div id="puffs" class="menu-panel">
-    <div class="menu-item"><div><div class="mi-name">Veg Puff</div><div class="mi-desc">Golden pastry, spiced potato</div></div><div class="mi-price">₹20</div></div>
-    <div class="menu-item"><div><div class="mi-name">Egg Puff</div><div class="mi-desc">Flaky shell, whole egg</div></div><div class="mi-price">₹25</div></div>
-    <div class="menu-item"><div><div class="mi-name">Chicken Puff</div><div class="mi-desc">Tender chicken, masala</div></div><div class="mi-price">₹35</div></div>
-    <div class="menu-item"><div><div class="mi-name">Paneer Puff</div><div class="mi-desc">Spiced paneer, crispy crust</div></div><div class="mi-price">₹30</div></div>
-  </div>
-  <div id="pizza" class="menu-panel">
-    <div class="menu-item"><div><div class="mi-name">Veg Margherita</div><div class="mi-desc">Tomato, mozzarella, basil</div></div><div class="mi-price">₹149</div></div>
-    <div class="menu-item"><div><div class="mi-name">Loaded Veg Pizza</div><div class="mi-desc">Bell peppers, onions, corn, olives</div></div><div class="mi-price">₹179</div></div>
-    <div class="menu-item"><div><div class="mi-name">Chicken Pizza</div><div class="mi-desc">Grilled chicken, peppers, cheese</div></div><div class="mi-price">₹219</div></div>
-    <div class="menu-item"><div><div class="mi-name">Paneer Tikka Pizza</div><div class="mi-desc">Tandoori paneer, desi spices</div></div><div class="mi-price">₹199</div></div>
-  </div>
-  <div id="burgers" class="menu-panel">
-    <div class="menu-item"><div><div class="mi-name">Veg Burger</div><div class="mi-desc">Fresh veggies, house sauce, soft bun</div></div><div class="mi-price">₹80</div></div>
-    <div class="menu-item"><div><div class="mi-name">Aloo Tikki Burger</div><div class="mi-desc">Spiced potato patty, chutney</div></div><div class="mi-price">₹90</div></div>
-    <div class="menu-item"><div><div class="mi-name">Chicken Burger</div><div class="mi-desc">Grilled chicken, lettuce, mayo</div></div><div class="mi-price">₹120</div></div>
-    <div class="menu-item"><div><div class="mi-name">Spicy Chicken Burger</div><div class="mi-desc">Crispy fried chicken, hot sauce</div></div><div class="mi-price">₹139</div></div>
-  </div>
-  <div id="sandwiches" class="menu-panel">
-    <div class="menu-item"><div><div class="mi-name">Veg Club Sandwich</div><div class="mi-desc">Triple-decker, fresh veggies</div></div><div class="mi-price">₹90</div></div>
-    <div class="menu-item"><div><div class="mi-name">Grilled Cheese Sandwich</div><div class="mi-desc">Melted cheese, buttered bread</div></div><div class="mi-price">₹80</div></div>
-    <div class="menu-item"><div><div class="mi-name">Chicken Sandwich</div><div class="mi-desc">Shredded chicken, herbs</div></div><div class="mi-price">₹110</div></div>
-  </div>
-  <div id="fries" class="menu-panel">
-    <div class="menu-item"><div><div class="mi-name">Classic French Fries</div><div class="mi-desc">Crispy golden, seasoned</div></div><div class="mi-price">₹60</div></div>
-    <div class="menu-item"><div><div class="mi-name">Peri Peri Fries</div><div class="mi-desc">Spicy peri peri seasoning</div></div><div class="mi-price">₹70</div></div>
-    <div class="menu-item"><div><div class="mi-name">Loaded Fries</div><div class="mi-desc">Cheese sauce, jalapeños</div></div><div class="mi-price">₹90</div></div>
-    <div class="menu-item"><div><div class="mi-name">Onion Rings</div><div class="mi-desc">Golden battered rings</div></div><div class="mi-price">₹70</div></div>
-  </div>
-  <div id="mojitos" class="menu-panel">
-    <div class="menu-item"><div><div class="mi-name">Classic Mojito</div><div class="mi-desc">Mint, lime, soda, sugar syrup</div></div><div class="mi-price">₹80</div></div>
-    <div class="menu-item"><div><div class="mi-name">Strawberry Mojito</div><div class="mi-desc">Fresh strawberry, mint</div></div><div class="mi-price">₹90</div></div>
-    <div class="menu-item"><div><div class="mi-name">Blue Lagoon Mojito</div><div class="mi-desc">Blue curacao, citrus</div></div><div class="mi-price">₹95</div></div>
-    <div class="menu-item"><div><div class="mi-name">Virgin Pina Colada</div><div class="mi-desc">Pineapple, coconut, cream</div></div><div class="mi-price">₹100</div></div>
-    <div class="menu-item"><div><div class="mi-name">Watermelon Cooler</div><div class="mi-desc">Fresh watermelon, mint</div></div><div class="mi-price">₹85</div></div>
-  </div>
-  <div id="shakes" class="menu-panel">
-    <div class="menu-item"><div><div class="mi-name">Chocolate Milkshake</div><div class="mi-desc">Rich dark cocoa, full cream</div></div><div class="mi-price">₹120</div></div>
-    <div class="menu-item"><div><div class="mi-name">Vanilla Milkshake</div><div class="mi-desc">Classic vanilla, thick cream</div></div><div class="mi-price">₹110</div></div>
-    <div class="menu-item"><div><div class="mi-name">Strawberry Milkshake</div><div class="mi-desc">Fresh strawberry blended</div></div><div class="mi-price">₹120</div></div>
-    <div class="menu-item"><div><div class="mi-name">Mango Milkshake</div><div class="mi-desc">Alphonso mango, seasonal</div></div><div class="mi-price">₹130</div></div>
-    <div class="menu-item"><div><div class="mi-name">Oreo Shake</div><div class="mi-desc">Crushed Oreo, cream, ice cream</div></div><div class="mi-price">₹140</div></div>
-  </div>
-  <div id="frankies" class="menu-panel">
-    <div class="menu-item"><div><div class="mi-name">Veg Frankie</div><div class="mi-desc">Spiced potato, masala wrap</div></div><div class="mi-price">₹70</div></div>
-    <div class="menu-item"><div><div class="mi-name">Paneer Frankie</div><div class="mi-desc">Tender paneer, tangy chutney</div></div><div class="mi-price">₹90</div></div>
-    <div class="menu-item"><div><div class="mi-name">Chicken Frankie</div><div class="mi-desc">Grilled chicken, onion, sauce</div></div><div class="mi-price">₹110</div></div>
+  <div class="reveal d2">
+    <div class="sec-label">Our Story</div>
+    <h2 class="sec-title" style="color:var(--cream)">More Than Just a <em>Bakery</em></h2>
+    <p class="sec-desc" style="color:rgba(250,240,220,.58);max-width:100%;margin-bottom:28px">Born in the heart of Hayathnagar — we bake fresh every morning with the finest ingredients for our community.</p>
+    <div class="about-points">
+      <div class="about-point"><div class="ap-icon">🧑‍🍳</div><div class="ap-text"><strong>Freshly Baked Every Day</strong><span>Nothing sits overnight. Fresh display every morning.</span></div></div>
+      <div class="about-point"><div class="ap-icon">🎂</div><div class="ap-text"><strong>Custom Cakes for Every Occasion</strong><span>Birthday, wedding, anniversary — we craft cakes that tell your story.</span></div></div>
+      <div class="about-point"><div class="ap-icon">🍕</div><div class="ap-text"><strong>Pizza · Burgers · Juice · Snacks</strong><span>Your complete neighbourhood food destination.</span></div></div>
+    </div>
   </div>
 </section>
 
-<!-- ============================================================ REVIEWS ============================================================ -->
 <section class="reviews" id="reviews">
-  <div class="sec-label reveal">Real Customer Feedback</div>
-  <h2 class="sec-title reveal d1">What Our <em>Customers</em> Say</h2>
+  <div class="sec-label reveal">Real Customers</div>
+  <h2 class="sec-title reveal d1">What People <em>Say</em></h2>
   <div class="google-rating-bar reveal d2">
     <div class="gr-num">4.5</div>
-    <div>
-      <div class="gr-stars">★★★★½</div>
-      <div class="gr-based">Based on Google reviews</div>
-      <div class="gr-powered">Powered by <b>Google Maps</b></div>
-    </div>
+    <div><div class="gr-stars">★★★★½</div><div class="gr-based">Google Reviews</div></div>
   </div>
   <div class="reviews-grid">
     <div class="review-card reveal">
-      <div class="review-hd">
-        <div class="r-avatar" style="background:linear-gradient(135deg,#E87010,#C85C00)">SR</div>
-        <div><div class="r-name">Srinivas Reddy</div><div class="r-date">2 months ago · Google</div></div>
-      </div>
+      <div class="review-hd"><div class="r-avatar" style="background:linear-gradient(135deg,#E87010,#C85C00)">SR</div><div><div class="r-name">Srinivas Reddy</div><div class="r-date">2 months ago</div></div></div>
       <div class="r-stars">★★★★★</div>
-      <p class="r-text">Excellent bakery! Ordered a custom birthday cake and it was absolutely stunning. The taste was even better than the look — moist, fresh and perfectly sweetened. Staff is very friendly and helpful.</p>
+      <p class="r-text">Excellent bakery! Ordered a custom birthday cake — moist, fresh and perfectly sweetened. Staff is very friendly!</p>
     </div>
     <div class="review-card reveal d1">
-      <div class="review-hd">
-        <div class="r-avatar" style="background:linear-gradient(135deg,#C8920A,#E0B84A)">MF</div>
-        <div><div class="r-name">Mohammed Farhan</div><div class="r-date">3 months ago · Google</div></div>
-      </div>
+      <div class="review-hd"><div class="r-avatar" style="background:linear-gradient(135deg,#C8920A,#E0B84A)">MF</div><div><div class="r-name">Mohammed Farhan</div><div class="r-date">3 months ago</div></div></div>
       <div class="r-stars">★★★★★</div>
-      <p class="r-text">Best bakery in Hayathnagar! Their puffs and biscuits are fresh every single day. The Osmani and Choco Chip biscuits are addictive. Prices are very reasonable for the quality they offer.</p>
+      <p class="r-text">Best bakery in Hayathnagar! Puffs and biscuits are fresh daily. Osmani and Choco Chip are addictive. Very reasonable prices.</p>
     </div>
     <div class="review-card reveal d2">
-      <div class="review-hd">
-        <div class="r-avatar" style="background:linear-gradient(135deg,#2C7A4B,#4CAF82)">PK</div>
-        <div><div class="r-name">Priya Kumari</div><div class="r-date">1 month ago · Google</div></div>
-      </div>
+      <div class="review-hd"><div class="r-avatar" style="background:linear-gradient(135deg,#2C7A4B,#4CAF82)">PK</div><div><div class="r-name">Priya Kumari</div><div class="r-date">1 month ago</div></div></div>
       <div class="r-stars">★★★★★</div>
-      <p class="r-text">Ordered a Red Velvet custom cake for my husband's birthday — same-day request. They delivered beautifully! The design was perfect and the cream cheese frosting was incredible.</p>
+      <p class="r-text">Ordered Red Velvet custom cake same-day. They delivered beautifully! Design was perfect and the frosting incredible.</p>
     </div>
     <div class="review-card reveal">
-      <div class="review-hd">
-        <div class="r-avatar" style="background:linear-gradient(135deg,#7B3FA0,#A56CC1)">VN</div>
-        <div><div class="r-name">Venkat Naidu</div><div class="r-date">4 months ago · Google</div></div>
-      </div>
-      <div class="r-stars">★★★★☆</div>
-      <p class="r-text">Very good bakery overall. The puffs are outstanding — best in the area. The dine-in area is clean and comfortable. Pizzas and burgers are also decent. Would love more flavor options for cakes.</p>
-    </div>
-    <div class="review-card reveal d1">
-      <div class="review-hd">
-        <div class="r-avatar" style="background:linear-gradient(135deg,#C85C00,#E87010)">AS</div>
-        <div><div class="r-name">Asha Sharma</div><div class="r-date">5 months ago · Google</div></div>
-      </div>
+      <div class="review-hd"><div class="r-avatar" style="background:linear-gradient(135deg,#C85C00,#E87010)">AS</div><div><div class="r-name">Asha Sharma</div><div class="r-date">5 months ago</div></div></div>
       <div class="r-stars">★★★★★</div>
-      <p class="r-text">Magnum is our family's go-to bakery. The Butterscotch cake is unbelievably good — we order it almost every month. Fresh, hygienic, affordable. Highly recommended!</p>
-    </div>
-    <div class="review-card reveal d2">
-      <div class="review-hd">
-        <div class="r-avatar" style="background:linear-gradient(135deg,#1565C0,#42A5F5)">RK</div>
-        <div><div class="r-name">Rahul Kumar</div><div class="r-date">6 months ago · Google</div></div>
-      </div>
-      <div class="r-stars">★★★★★</div>
-      <p class="r-text">Came across this place while passing through Hayathnagar. Stopped for a quick puff, stayed for the amazing cake display. Ended up buying a whole Black Forest cake on the spot — no regrets!</p>
+      <p class="r-text">Our family's go-to bakery. The Butterscotch cake is unbelievably good — we order it every month. Fresh, hygienic, affordable!</p>
     </div>
   </div>
-  <div class="reviews-cta">
+  <div style="text-align:center;margin-top:32px">
     <a href="https://maps.app.goo.gl/J85C81Cndp9DasCo7" target="_blank" rel="noopener" class="btn-primary">Read All Reviews on Google →</a>
   </div>
 </section>
 
-<!-- ============================================================ CTA STRIP ============================================================ -->
 <div class="cta-strip">
   <div>
     <h2>Order Your Custom Cake Today</h2>
-    <p>Call us or WhatsApp — we'll bake it fresh for your special moment.</p>
+    <p>Call us or WhatsApp — baked fresh for your special moment.</p>
   </div>
   <div class="cta-btns">
     <a href="tel:09346693818" class="btn-white">📞 093466 93818</a>
@@ -413,57 +412,52 @@
   </div>
 </div>
 
-<!-- ============================================================ CONTACT ============================================================ -->
 <section class="contact" id="contact">
   <div class="sec-label reveal">Find Us</div>
   <h2 class="sec-title reveal d1">Visit <em>Our Bakery</em></h2>
   <div class="contact-layout">
     <div class="contact-cards">
-      <div class="c-card reveal">
-        <div class="c-card-icon">📍</div>
-        <div><h4>Our Location</h4><p>Old Hayathnagar Rd, beside Apollo Pharmacy<br>Sai Colony, Hayathnagar_Khalsa<br>Hyderabad, Telangana 501505</p></div>
-      </div>
-      <div class="c-card reveal d1">
-        <div class="c-card-icon">📞</div>
-        <div><h4>Call to Order</h4><p><a href="tel:09346693818">093466 93818</a><br>Happy to take custom cake orders!</p></div>
-      </div>
-      <div class="c-card reveal d2">
-        <div class="c-card-icon">⏰</div>
-        <div><h4>Opening Hours</h4><p>Monday – Sunday (All Days)<br>8:00 AM – 10:00 PM</p></div>
-      </div>
-      <div class="c-card reveal d3">
-        <div class="c-card-icon">💬</div>
-        <div><h4>WhatsApp Order</h4><p><a href="https://wa.me/919346693818" target="_blank" rel="noopener">093466 93818</a><br>Send your cake order directly on WhatsApp</p></div>
-      </div>
+      <div class="c-card reveal"><div class="c-card-icon">📍</div><div><h4>Our Location</h4><p>Old Hayathnagar Rd, beside Apollo Pharmacy<br>Sai Colony, Hayathnagar_Khalsa<br>Hyderabad, Telangana 501505</p></div></div>
+      <div class="c-card reveal d1"><div class="c-card-icon">📞</div><div><h4>Call to Order</h4><p><a href="tel:09346693818">093466 93818</a><br>Happy to take custom cake orders!</p></div></div>
+      <div class="c-card reveal d2"><div class="c-card-icon">⏰</div><div><h4>Opening Hours</h4><p>Monday – Sunday (All Days)<br>8:00 AM – 10:00 PM</p></div></div>
+      <div class="c-card reveal d3"><div class="c-card-icon">💬</div><div><h4>WhatsApp</h4><p><a href="https://wa.me/919346693818" target="_blank" rel="noopener">093466 93818</a><br>Send your order directly on WhatsApp</p></div></div>
     </div>
     <div class="map-wrap reveal d2">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.878305466475!2d78.6082131793457!3d17.3214198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba1006cd712cf%3A0x685d7ffc44adc1ab!2sMagnum%20Bakes%20%26%20Cakes!5e0!3m2!1sen!2sin!4v1776484831753!5m2!1sen!2sin"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        title="Magnum Bakes & Cakes location map">
-      </iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.878305466475!2d78.6082131793457!3d17.3214198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba1006cd712cf%3A0x685d7ffc44adc1ab!2sMagnum%20Bakes%20%26%20Cakes!5e0!3m2!1sen!2sin!4v1776484831753!5m2!1sen!2sin"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Magnum Bakes and Cakes map"></iframe>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ FOOTER ============================================================ -->
 <footer>
   <div class="footer-grid">
     <div class="f-brand">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-        <div style="width:46px;height:46px;border-radius:50%;background:var(--brand-org);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">🍰</div>
+        <div style="width:42px;height:42px;border-radius:50%;background:var(--brand-org);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">🍰</div>
         <div><div class="f-brand-name">Magnum</div><div class="f-brand-sub">Bakes & Cakes</div></div>
       </div>
-      <p>Hayathnagar's warmest bakery — where every bite tells a story of freshness, love, and craftsmanship. Visit us and taste the difference.</p>
+      <p>Hayathnagar's warmest bakery — fresh every day, made with love.</p>
       <div class="social-row">
-        <a href="https://wa.me/919346693818" class="soc" title="WhatsApp" rel="noopener">💬</a>
-        <a href="tel:09346693818" class="soc" title="Call">📞</a>
-        <a href="https://maps.app.goo.gl/J85C81Cndp9DasCo7" target="_blank" rel="noopener" class="soc" title="Google Maps">📍</a>
+        <a href="https://wa.me/919346693818" class="soc" rel="noopener">💬</a>
+        <a href="tel:09346693818" class="soc">📞</a>
+        <a href="https://maps.app.goo.gl/J85C81Cndp9DasCo7" target="_blank" rel="noopener" class="soc">📍</a>
       </div>
     </div>
-    <div class="f-col"><h5>Our Menu</h5><ul><li><a href="#menu" onclick="switchTab('cakes')">Cakes</a></li><li><a href="#menu" onclick="switchTab('pastries')">Pastries</a></li><li><a href="#menu" onclick="switchTab('biscuits')">Biscuits</a></li><li><a href="#menu" onclick="switchTab('puffs')">Puffs</a></li><li><a href="#menu" onclick="switchTab('pizza')">Pizza</a></li><li><a href="#menu" onclick="switchTab('shakes')">Milkshakes</a></li></ul></div>
-    <div class="f-col"><h5>Quick Links</h5><ul><li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul></div>
-    <div class="f-col"><h5>Order Now</h5><ul><li><a href="tel:09346693818">📞 093466 93818</a></li><li><a href="https://wa.me/919346693818" target="_blank" rel="noopener">WhatsApp Order</a></li><li><a href="https://maps.app.goo.gl/J85C81Cndp9DasCo7" target="_blank" rel="noopener">Get Directions</a></li><li><a href="#menu">View Full Menu</a></li></ul></div>
+    <div class="f-col"><h5>Menu</h5><ul>
+      <li><a href="#menu" onclick="switchTab('cakes')">Cakes</a></li>
+      <li><a href="#menu" onclick="switchTab('pastries')">Pastries</a></li>
+      <li><a href="#menu" onclick="switchTab('biscuits')">Biscuits</a></li>
+      <li><a href="#menu" onclick="switchTab('pizza')">Pizza</a></li>
+      <li><a href="#menu" onclick="switchTab('fried')">Fried Snacks</a></li>
+      <li><a href="#menu" onclick="switchTab('shakes')">Milkshakes</a></li>
+    </ul></div>
+    <div class="f-col"><h5>Order Now</h5><ul>
+      <li><a href="tel:09346693818">📞 093466 93818</a></li>
+      <li><a href="https://wa.me/919346693818" target="_blank" rel="noopener">WhatsApp Order</a></li>
+      <li><a href="https://maps.app.goo.gl/J85C81Cndp9DasCo7" target="_blank" rel="noopener">Get Directions</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul></div>
   </div>
   <div class="footer-bottom">
     <p>© 2025 Magnum Bakes &amp; Cakes · Old Hayathnagar Rd, Hyderabad 501505</p>
@@ -471,7 +465,6 @@
   </div>
 </footer>
 
-<!-- WhatsApp Float -->
 <a href="https://wa.me/919346693818?text=Hi%20Magnum%20Bakes%2C%20I%27d%20like%20to%20place%20an%20order!" target="_blank" rel="noopener" class="wa-btn" title="Order on WhatsApp">💬</a>
 
 <script src="js/main.js"></script>
