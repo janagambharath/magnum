@@ -32,8 +32,53 @@ function escapeHtml(value = '') {
   }[char]));
 }
 
+const ONLINE_PRODUCT_IMAGES = {
+  cake: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80',
+  redVelvetCake: 'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&w=900&q=80',
+  pastry: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80',
+  chocolateDessert: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80',
+  donut: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80',
+  biscuits: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=900&q=80',
+  puff: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80',
+  pizza: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80',
+  burger: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=80',
+  hotDog: 'https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=900&q=80',
+  sandwich: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80',
+  wrap: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=80',
+  springRoll: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7?auto=format&fit=crop&w=900&q=80',
+  fries: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80',
+  fried: 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=900&q=80',
+  mojito: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=900&q=80',
+  milkshake: 'https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&w=900&q=80',
+};
+
+const ONLINE_IMAGE_RULES = [
+  { test: /red velvet/i, image: ONLINE_PRODUCT_IMAGES.redVelvetCake },
+  { test: /donut/i, image: ONLINE_PRODUCT_IMAGES.donut },
+  { test: /choco lava|chocolate pastry/i, image: ONLINE_PRODUCT_IMAGES.chocolateDessert },
+  { test: /pastry|rasamalai/i, image: ONLINE_PRODUCT_IMAGES.pastry },
+  { test: /blueberry|blue berry/i, image: ONLINE_PRODUCT_IMAGES.cake },
+  { test: /biscuit|osmania|salt|chand|badam|vanilla|choco chip|pista|kaju|almond/i, image: ONLINE_PRODUCT_IMAGES.biscuits },
+  { test: /puff/i, image: ONLINE_PRODUCT_IMAGES.puff },
+  { test: /pizza/i, image: ONLINE_PRODUCT_IMAGES.pizza },
+  { test: /hot dog/i, image: ONLINE_PRODUCT_IMAGES.hotDog },
+  { test: /burger/i, image: ONLINE_PRODUCT_IMAGES.burger },
+  { test: /sandwich/i, image: ONLINE_PRODUCT_IMAGES.sandwich },
+  { test: /frankie/i, image: ONLINE_PRODUCT_IMAGES.wrap },
+  { test: /spring roll/i, image: ONLINE_PRODUCT_IMAGES.springRoll },
+  { test: /fries/i, image: ONLINE_PRODUCT_IMAGES.fries },
+  { test: /popcorn|wings|lollipops|boneless|drumsticks|strips/i, image: ONLINE_PRODUCT_IMAGES.fried },
+  { test: /mojito/i, image: ONLINE_PRODUCT_IMAGES.mojito },
+  { test: /shake/i, image: ONLINE_PRODUCT_IMAGES.milkshake },
+];
+
+function onlineProductImage(productName) {
+  const match = ONLINE_IMAGE_RULES.find(rule => rule.test.test(productName));
+  return match ? match.image : '';
+}
+
 function productImage(product, fallback) {
-  return product.img || fallback || 'images/storefront.jpeg';
+  return product.img || onlineProductImage(product.name) || fallback || 'images/storefront.jpeg';
 }
 
 function productAlt(product) {
