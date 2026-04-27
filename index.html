@@ -33,6 +33,7 @@
   </button>
 </nav>
 
+<!-- ═══════════════════ HERO ═══════════════════ -->
 <section class="hero" id="home">
   <div class="hero-content">
     <div class="hero-eyebrow">
@@ -64,6 +65,7 @@
   </div>
 </section>
 
+<!-- ═══════════════════ TRUST BAR ═══════════════════ -->
 <div class="trust-bar">
   <div class="t-item">✓ Fresh Every Morning</div>
   <div class="t-item">♥ Custom Cakes</div>
@@ -72,6 +74,7 @@
   <div class="t-item">📞 093466 93818</div>
 </div>
 
+<!-- ═══════════════════ CATEGORIES ═══════════════════ -->
 <section class="categories" id="categories">
   <div class="cats-header">
     <div>
@@ -81,17 +84,18 @@
     <a href="#menu" class="btn-primary reveal d2">Full Menu</a>
   </div>
   <div class="cats-grid">
-    <a href="#menu" class="cat-card reveal" onclick="switchTab('cakes')"><span class="cat-icon">🎂</span><div class="cat-name">Cakes</div><div class="cat-count">₹250 – ₹800</div></a>
-    <a href="#menu" class="cat-card reveal d1" onclick="switchTab('pastries')"><span class="cat-icon">🍰</span><div class="cat-name">Pastries</div><div class="cat-count">from ₹40</div></a>
-    <a href="#menu" class="cat-card reveal d2" onclick="switchTab('biscuits')"><span class="cat-icon">🍪</span><div class="cat-name">Biscuits</div><div class="cat-count">₹300/kg</div></a>
-    <a href="#menu" class="cat-card reveal d3" onclick="switchTab('puffs')"><span class="cat-icon">🥧</span><div class="cat-name">Puffs</div><div class="cat-count">from ₹20</div></a>
-    <a href="#menu" class="cat-card reveal" onclick="switchTab('pizza')"><span class="cat-icon">🍕</span><div class="cat-name">Pizzas</div><div class="cat-count">from ₹150</div></a>
-    <a href="#menu" class="cat-card reveal d1" onclick="switchTab('burgers')"><span class="cat-icon">🍔</span><div class="cat-name">Burgers</div><div class="cat-count">from ₹70</div></a>
-    <a href="#menu" class="cat-card reveal d2" onclick="switchTab('mojitos')"><span class="cat-icon">🍹</span><div class="cat-name">Mojitos</div><div class="cat-count">₹60 each</div></a>
-    <a href="#menu" class="cat-card reveal d3" onclick="switchTab('shakes')"><span class="cat-icon">🥤</span><div class="cat-name">Milkshakes</div><div class="cat-count">from ₹80</div></a>
+    <a href="#menu" class="cat-card reveal"    onclick="switchTab('cakes')">      <span class="cat-icon">🎂</span><div class="cat-name">Cakes</div>      <div class="cat-count">₹250 – ₹800</div></a>
+    <a href="#menu" class="cat-card reveal d1" onclick="switchTab('pastries')">   <span class="cat-icon">🍰</span><div class="cat-name">Pastries</div>   <div class="cat-count">from ₹40</div></a>
+    <a href="#menu" class="cat-card reveal d2" onclick="switchTab('biscuits')">   <span class="cat-icon">🍪</span><div class="cat-name">Biscuits</div>   <div class="cat-count">₹300/kg</div></a>
+    <a href="#menu" class="cat-card reveal d3" onclick="switchTab('puffs')">      <span class="cat-icon">🥧</span><div class="cat-name">Puffs</div>      <div class="cat-count">from ₹20</div></a>
+    <a href="#menu" class="cat-card reveal"    onclick="switchTab('pizza')">      <span class="cat-icon">🍕</span><div class="cat-name">Pizzas</div>     <div class="cat-count">from ₹150</div></a>
+    <a href="#menu" class="cat-card reveal d1" onclick="switchTab('burgers')">    <span class="cat-icon">🍔</span><div class="cat-name">Burgers</div>    <div class="cat-count">from ₹70</div></a>
+    <a href="#menu" class="cat-card reveal d2" onclick="switchTab('mojitos')">    <span class="cat-icon">🍹</span><div class="cat-name">Mojitos</div>    <div class="cat-count">₹60 each</div></a>
+    <a href="#menu" class="cat-card reveal d3" onclick="switchTab('shakes')">     <span class="cat-icon">🥤</span><div class="cat-name">Milkshakes</div> <div class="cat-count">from ₹80</div></a>
   </div>
 </section>
 
+<!-- ═══════════════════ SHOWCASE — SIGNATURE CAKES ═══════════════════ -->
 <section class="showcase" id="bestsellers">
   <div class="showcase-inner">
     <div class="showcase-img reveal">
@@ -103,15 +107,8 @@
       <h2 class="sec-title">Our <em>Cakes</em></h2>
       <p class="sec-desc" style="margin-bottom:20px">Crafted to order, finished by hand. Every cake is a celebration.</p>
       <div class="price-header-row"><span>Cake</span><span>½kg &nbsp;/&nbsp; 1kg</span></div>
-      <div class="cake-list">
-        <div class="cake-row"><span class="ck-name">Pineapple</span><span class="ck-price">₹250 / ₹500</span></div>
-        <div class="cake-row"><span class="ck-name">Butterscotch</span><span class="ck-price">₹275 / ₹550</span></div>
-        <div class="cake-row"><span class="ck-name">Blackforest</span><span class="ck-price">₹300 / ₹600</span></div>
-        <div class="cake-row"><span class="ck-name">Chocolate</span><span class="ck-price">₹400 / ₹800</span></div>
-        <div class="cake-row"><span class="ck-name">Honey Almond</span><span class="ck-price">₹400 / ₹800</span></div>
-        <div class="cake-row"><span class="ck-name">Blueberry</span><span class="ck-price">₹400 / ₹800</span></div>
-        <div class="cake-row"><span class="ck-name">Red Velvet</span><span class="ck-price">₹400 / ₹800</span></div>
-      </div>
+      <!-- JS renders all cake rows with Order Now buttons -->
+      <div class="cake-list" id="showcaseCakeList"></div>
       <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
         <a href="tel:09346693818" class="btn-primary">Order by Phone</a>
         <a href="https://wa.me/919346693818" target="_blank" class="btn-outline-dark">WhatsApp</a>
@@ -120,24 +117,15 @@
   </div>
 </section>
 
+<!-- ═══════════════════ BISCUITS — DARK SECTION ═══════════════════ -->
 <section class="biscuits-section" id="biscuits-section">
   <div class="biscuits-inner">
     <div class="biscuits-content reveal">
       <div class="sec-label" style="color:var(--gold-lt)">Baked Fresh Daily</div>
       <h2 class="sec-title" style="color:var(--cream)">Artisan <em>Biscuits</em></h2>
       <p class="sec-desc" style="color:rgba(250,240,220,.6);margin-bottom:22px">Hyderabad's favourites — sold by weight, baked fresh every morning.</p>
-      <div class="biscuit-grid">
-        <div class="bis-item"><span class="bi-name">Osmania</span><span class="bi-price">₹300/kg</span></div>
-        <div class="bis-item"><span class="bi-name">Salt</span><span class="bi-price">₹300/kg</span></div>
-        <div class="bis-item"><span class="bi-name">Chand</span><span class="bi-price">₹320/kg</span></div>
-        <div class="bis-item"><span class="bi-name">Badam</span><span class="bi-price">₹320/kg</span></div>
-        <div class="bis-item"><span class="bi-name">Vanilla</span><span class="bi-price">₹320/kg</span></div>
-        <div class="bis-item"><span class="bi-name">Choco Chip</span><span class="bi-price">₹320/kg</span></div>
-        <div class="bis-item featured"><span class="bi-name">Pista</span><span class="bi-price">₹320/kg</span></div>
-        <div class="bis-item featured"><span class="bi-name">Choc Kaju</span><span class="bi-price">₹320/kg</span></div>
-        <div class="bis-item featured"><span class="bi-name">Butterscotch</span><span class="bi-price">₹320/kg</span></div>
-        <div class="bis-item featured"><span class="bi-name">Almond</span><span class="bi-price">₹320/kg</span></div>
-      </div>
+      <!-- JS renders biscuit grid items with Order ghost buttons -->
+      <div class="biscuit-grid" id="bisGrid"></div>
     </div>
     <div class="biscuits-img reveal d2">
       <img src="images/biscuits.jpeg" alt="Freshly baked biscuits counter — Osmani, Choco Chip, Butterscotch, Pista, Badam varieties" loading="lazy">
@@ -146,6 +134,7 @@
   </div>
 </section>
 
+<!-- ═══════════════════ FULL MENU ═══════════════════ -->
 <section class="menu-section" id="menu">
   <div class="menu-header reveal">
     <div class="sec-label">Complete Menu</div>
@@ -153,177 +142,130 @@
     <p class="sec-desc">Real prices, freshly made. Tap a category below.</p>
   </div>
   <div class="menu-tabs" id="menuTabs">
-    <button class="menu-tab active" data-tab="cakes"      onclick="switchTab('cakes')">🎂 Cakes</button>
-    <button class="menu-tab"        data-tab="pastries"   onclick="switchTab('pastries')">🍰 Pastries</button>
-    <button class="menu-tab"        data-tab="biscuits"   onclick="switchTab('biscuits')">🍪 Biscuits</button>
-    <button class="menu-tab"        data-tab="puffs"      onclick="switchTab('puffs')">🥧 Puffs</button>
-    <button class="menu-tab"        data-tab="pizza"      onclick="switchTab('pizza')">🍕 Pizza</button>
-    <button class="menu-tab"        data-tab="burgers"    onclick="switchTab('burgers')">🍔 Burgers</button>
-    <button class="menu-tab"        data-tab="sandwiches" onclick="switchTab('sandwiches')">🥪 Sandwiches</button>
-    <button class="menu-tab"        data-tab="frankies"   onclick="switchTab('frankies')">🌯 Frankies</button>
-    <button class="menu-tab"        data-tab="snacks"     onclick="switchTab('snacks')">🍟 Mini Snacks</button>
-    <button class="menu-tab"        data-tab="fried"      onclick="switchTab('fried')">🍗 Fried Snacks</button>
-    <button class="menu-tab"        data-tab="mojitos"    onclick="switchTab('mojitos')">🍹 Mojitos</button>
-    <button class="menu-tab"        data-tab="shakes"     onclick="switchTab('shakes')">🥤 Milkshakes</button>
+    <button class="menu-tab active"  data-tab="cakes"       onclick="switchTab('cakes')">🎂 Cakes</button>
+    <button class="menu-tab"         data-tab="pastries"    onclick="switchTab('pastries')">🍰 Pastries</button>
+    <button class="menu-tab"         data-tab="biscuits"    onclick="switchTab('biscuits')">🍪 Biscuits</button>
+    <button class="menu-tab"         data-tab="puffs"       onclick="switchTab('puffs')">🥧 Puffs</button>
+    <button class="menu-tab"         data-tab="pizza"       onclick="switchTab('pizza')">🍕 Pizza</button>
+    <button class="menu-tab"         data-tab="burgers"     onclick="switchTab('burgers')">🍔 Burgers</button>
+    <button class="menu-tab"         data-tab="sandwiches"  onclick="switchTab('sandwiches')">🥪 Sandwiches</button>
+    <button class="menu-tab"         data-tab="frankies"    onclick="switchTab('frankies')">🌯 Frankies</button>
+    <button class="menu-tab"         data-tab="snacks"      onclick="switchTab('snacks')">🍟 Mini Snacks</button>
+    <button class="menu-tab"         data-tab="fried"       onclick="switchTab('fried')">🍗 Fried Snacks</button>
+    <button class="menu-tab"         data-tab="mojitos"     onclick="switchTab('mojitos')">🍹 Mojitos</button>
+    <button class="menu-tab"         data-tab="shakes"      onclick="switchTab('shakes')">🥤 Milkshakes</button>
   </div>
 
+  <!-- CAKES PANEL -->
   <div id="cakes" class="menu-panel active">
     <div class="menu-panel-header">
       <img src="images/cakes-display.jpeg" alt="Cakes counter" class="menu-panel-img" loading="lazy">
       <div class="menu-panel-info"><h3>🎂 Cakes</h3><p>Available in ½kg and 1kg. Custom orders welcome!</p></div>
     </div>
-    <div class="menu-items">
-      <div class="menu-item"><div class="mi-name">Pineapple</div><div class="mi-price">₹250 / ₹500</div></div>
-      <div class="menu-item"><div class="mi-name">Butterscotch</div><div class="mi-price">₹275 / ₹550</div></div>
-      <div class="menu-item"><div class="mi-name">Blackforest</div><div class="mi-price">₹300 / ₹600</div></div>
-      <div class="menu-item"><div class="mi-name">Chocolate</div><div class="mi-price">₹400 / ₹800</div></div>
-      <div class="menu-item"><div class="mi-name">Honey Almond</div><div class="mi-price">₹400 / ₹800</div></div>
-      <div class="menu-item"><div class="mi-name">Blueberry</div><div class="mi-price">₹400 / ₹800</div></div>
-      <div class="menu-item"><div class="mi-name">Red Velvet</div><div class="mi-price">₹400 / ₹800</div></div>
-    </div>
+    <div class="menu-items" id="menuCakeList"></div>
   </div>
 
+  <!-- PASTRIES PANEL -->
   <div id="pastries" class="menu-panel">
-    <div class="menu-items">
-      <div class="menu-item"><div class="mi-name">Pineapple Pastry</div><div class="mi-price">₹40</div></div>
-      <div class="menu-item"><div class="mi-name">Butterscotch Pastry</div><div class="mi-price">₹45</div></div>
-      <div class="menu-item"><div class="mi-name">Blackforest Pastry</div><div class="mi-price">₹55</div></div>
-      <div class="menu-item"><div class="mi-name">Chocolate Pastry</div><div class="mi-price">₹70</div></div>
-      <div class="menu-item"><div class="mi-name">Choco Lava</div><div class="mi-price">₹70</div></div>
-      <div class="menu-item"><div class="mi-name">Honey Almond</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Rasamalai</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Blue Berry</div><div class="mi-price">₹70</div></div>
-      <div class="menu-item"><div class="mi-name">Donut</div><div class="mi-price">₹45</div></div>
+    <div class="menu-panel-header">
+      <img src="images/cakes-display.jpeg" alt="Pastries counter" class="menu-panel-img" loading="lazy">
+      <div class="menu-panel-info"><h3>🍰 Pastries</h3><p>Fresh pastries baked daily. Individual pieces.</p></div>
     </div>
+    <div class="menu-items" id="menuPastriesList"></div>
   </div>
 
+  <!-- BISCUITS PANEL -->
   <div id="biscuits" class="menu-panel">
     <div class="menu-panel-header">
       <img src="images/biscuits.jpeg" alt="Biscuits counter" class="menu-panel-img" loading="lazy">
       <div class="menu-panel-info"><h3>🍪 Biscuits</h3><p>All priced per kilogram. Bulk orders available.</p></div>
     </div>
-    <div class="menu-items">
-      <div class="menu-item"><div class="mi-name">Osmania</div><div class="mi-price">₹300/kg</div></div>
-      <div class="menu-item"><div class="mi-name">Salt</div><div class="mi-price">₹300/kg</div></div>
-      <div class="menu-item"><div class="mi-name">Chand</div><div class="mi-price">₹320/kg</div></div>
-      <div class="menu-item"><div class="mi-name">Badam</div><div class="mi-price">₹320/kg</div></div>
-      <div class="menu-item"><div class="mi-name">Vanilla</div><div class="mi-price">₹320/kg</div></div>
-      <div class="menu-item"><div class="mi-name">Choco Chip</div><div class="mi-price">₹320/kg</div></div>
-      <div class="menu-item"><div class="mi-name">Pista</div><div class="mi-price">₹320/kg</div></div>
-      <div class="menu-item"><div class="mi-name">Chocolate Kaju</div><div class="mi-price">₹320/kg</div></div>
-      <div class="menu-item"><div class="mi-name">Butterscotch</div><div class="mi-price">₹320/kg</div></div>
-      <div class="menu-item"><div class="mi-name">Almond</div><div class="mi-price">₹320/kg</div></div>
-    </div>
+    <div class="menu-items" id="menuBiscuitsList"></div>
   </div>
 
+  <!-- PUFFS PANEL -->
   <div id="puffs" class="menu-panel">
-    <div class="menu-items">
-      <div class="menu-item"><div class="mi-name">Veg Puff</div><div class="mi-price">₹20</div></div>
-      <div class="menu-item"><div class="mi-name">Egg Puff</div><div class="mi-price">₹25</div></div>
-      <div class="menu-item"><div class="mi-name">Full Egg Puff</div><div class="mi-price">₹30</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Puff</div><div class="mi-price">₹30</div></div>
-      <div class="menu-item"><div class="mi-name">Panner Puff</div><div class="mi-price">₹30</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Tikka Puff</div><div class="mi-price">₹40</div></div>
-      <div class="menu-item"><div class="mi-name">Panner Tikka Puff</div><div class="mi-price">₹40</div></div>
+    <div class="menu-panel-header">
+      <img src="images/cakes-display.jpeg" alt="Puffs" class="menu-panel-img" loading="lazy">
+      <div class="menu-panel-info"><h3>🥧 Puffs</h3><p>Baked fresh every morning. Available till stock lasts.</p></div>
     </div>
+    <div class="menu-items" id="menuPuffsList"></div>
   </div>
 
+  <!-- PIZZA PANEL -->
   <div id="pizza" class="menu-panel">
-    <div class="menu-items">
-      <div class="menu-item"><div class="mi-name">Cheese Pizza</div><div class="mi-price">₹150</div></div>
-      <div class="menu-item"><div class="mi-name">Veg Delight Pizza</div><div class="mi-price">₹170</div></div>
-      <div class="menu-item"><div class="mi-name">Sweet Corn Pizza</div><div class="mi-price">₹180</div></div>
-      <div class="menu-item"><div class="mi-name">Paneer Pizza</div><div class="mi-price">₹200</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Pizza</div><div class="mi-price">₹200</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Sweet Corn Pizza</div><div class="mi-price">₹220</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Tikka Pizza</div><div class="mi-price">₹250</div></div>
-      <div class="menu-item"><div class="mi-name">Veg Mexican Pizza</div><div class="mi-price">₹270</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Mexican Pizza</div><div class="mi-price">₹290</div></div>
+    <div class="menu-panel-header">
+      <img src="images/storefront.jpeg" alt="Pizza" class="menu-panel-img" loading="lazy">
+      <div class="menu-panel-info"><h3>🍕 Pizza</h3><p>Made fresh to order in our kitchen.</p></div>
     </div>
+    <div class="menu-items" id="menuPizzaList"></div>
   </div>
 
+  <!-- BURGERS PANEL -->
   <div id="burgers" class="menu-panel">
-    <div class="menu-items">
-      <div class="menu-item"><div class="mi-name">Crispy Veg Burger</div><div class="mi-price">₹70</div></div>
-      <div class="menu-item"><div class="mi-name">Paneer Burger</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Crispy Chicken Burger</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Tikka Burger</div><div class="mi-price">₹90</div></div>
-      <div class="menu-item"><div class="mi-name">Veg Hot Dog</div><div class="mi-price">₹70</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Hot Dog</div><div class="mi-price">₹80</div></div>
+    <div class="menu-panel-header">
+      <img src="images/storefront.jpeg" alt="Burgers" class="menu-panel-img" loading="lazy">
+      <div class="menu-panel-info"><h3>🍔 Burgers</h3><p>Crispy, fresh, made to order.</p></div>
     </div>
+    <div class="menu-items" id="menuBurgersList"></div>
   </div>
 
+  <!-- SANDWICHES PANEL -->
   <div id="sandwiches" class="menu-panel">
-    <div class="menu-items">
-      <div class="menu-item"><div class="mi-name">Veg Grilled Sandwich</div><div class="mi-price">₹70</div></div>
-      <div class="menu-item"><div class="mi-name">Paneer Grilled Sandwich</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Grilled Sandwich</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Tikka Grilled Sandwich</div><div class="mi-price">₹90</div></div>
+    <div class="menu-panel-header">
+      <img src="images/storefront.jpeg" alt="Sandwiches" class="menu-panel-img" loading="lazy">
+      <div class="menu-panel-info"><h3>🥪 Sandwiches</h3><p>Grilled fresh, packed with flavour.</p></div>
     </div>
+    <div class="menu-items" id="menuSandwichesList"></div>
   </div>
 
+  <!-- FRANKIES PANEL -->
   <div id="frankies" class="menu-panel">
-    <div class="menu-items">
-      <div class="menu-item"><div class="mi-name">Veg Frankie</div><div class="mi-price">₹70</div></div>
-      <div class="menu-item"><div class="mi-name">Paneer Frankie</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Frankie</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Tikka Frankie</div><div class="mi-price">₹90</div></div>
+    <div class="menu-panel-header">
+      <img src="images/storefront.jpeg" alt="Frankies" class="menu-panel-img" loading="lazy">
+      <div class="menu-panel-info"><h3>🌯 Frankies</h3><p>Rolled fresh, spiced right.</p></div>
     </div>
+    <div class="menu-items" id="menuFrankiesList"></div>
   </div>
 
+  <!-- SNACKS PANEL -->
   <div id="snacks" class="menu-panel">
-    <div class="menu-items">
-      <div class="menu-item"><div class="mi-name">Veg Spring Roll</div><div class="mi-price">₹70</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Spring Roll</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">French Fries Salted</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">French Fries Peri Peri</div><div class="mi-price">₹90</div></div>
-      <div class="menu-item"><div class="mi-name">Veg Strips (3pc)</div><div class="mi-price">₹59</div></div>
-      <div class="menu-item"><div class="mi-name">Veg Strips (6pc)</div><div class="mi-price">₹119</div></div>
+    <div class="menu-panel-header">
+      <img src="images/storefront.jpeg" alt="Snacks" class="menu-panel-img" loading="lazy">
+      <div class="menu-panel-info"><h3>🍟 Mini Snacks</h3><p>Quick bites, great flavours.</p></div>
     </div>
+    <div class="menu-items" id="menuSnacksList"></div>
   </div>
 
+  <!-- FRIED SNACKS PANEL -->
   <div id="fried" class="menu-panel">
-    <div class="menu-items">
-      <div class="menu-item"><div class="mi-name">Chicken Popcorn (Regular)</div><div class="mi-price">₹99</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Popcorn (Medium)</div><div class="mi-price">₹149</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Wings (3pcs)</div><div class="mi-price">₹79</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Wings (6pcs)</div><div class="mi-price">₹149</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Lollipops (3pcs)</div><div class="mi-price">₹89</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Lollipops (6pcs)</div><div class="mi-price">₹159</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Boneless Strips (3pcs)</div><div class="mi-price">₹89</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Boneless Strips (6pcs)</div><div class="mi-price">₹159</div></div>
-      <div class="menu-item"><div class="mi-name">Chicken Drumsticks (1pc)</div><div class="mi-price">₹69</div></div>
+    <div class="menu-panel-header">
+      <img src="images/storefront.jpeg" alt="Fried Snacks" class="menu-panel-img" loading="lazy">
+      <div class="menu-panel-info"><h3>🍗 Fried Snacks</h3><p>Crispy chicken — wings, lollipops, strips & more.</p></div>
     </div>
+    <div class="menu-items" id="menuFriedList"></div>
   </div>
 
+  <!-- MOJITOS PANEL -->
   <div id="mojitos" class="menu-panel">
-    <div class="menu-items">
-      <div class="menu-item"><div class="mi-name">Lime Mojito</div><div class="mi-price">₹60</div></div>
-      <div class="menu-item"><div class="mi-name">Green Mint Mojito</div><div class="mi-price">₹60</div></div>
-      <div class="menu-item"><div class="mi-name">Blue Ocean Mojito</div><div class="mi-price">₹60</div></div>
-      <div class="menu-item"><div class="mi-name">Strawberry Mojito</div><div class="mi-price">₹60</div></div>
-      <div class="menu-item"><div class="mi-name">Black Current Mojito</div><div class="mi-price">₹60</div></div>
-      <div class="menu-item"><div class="mi-name">Rose Mojito</div><div class="mi-price">₹60</div></div>
-      <div class="menu-item"><div class="mi-name">Pineapple Mojito</div><div class="mi-price">₹60</div></div>
+    <div class="menu-panel-header">
+      <img src="images/storefront.jpeg" alt="Mojitos" class="menu-panel-img" loading="lazy">
+      <div class="menu-panel-info"><h3>🍹 Mojitos</h3><p>Refreshing, chilled, made fresh. All at ₹60.</p></div>
     </div>
+    <div class="menu-items" id="menuMojitosList"></div>
   </div>
 
+  <!-- MILKSHAKES PANEL -->
   <div id="shakes" class="menu-panel">
-    <div class="menu-items">
-      <div class="menu-item"><div class="mi-name">Pine Apple</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Butterscotch</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Strawberry</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Chocolate</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Mango</div><div class="mi-price">₹90</div></div>
-      <div class="menu-item"><div class="mi-name">Black Current</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Blueberry</div><div class="mi-price">₹90</div></div>
-      <div class="menu-item"><div class="mi-name">Honey Almond</div><div class="mi-price">₹100</div></div>
-      <div class="menu-item"><div class="mi-name">Orange</div><div class="mi-price">₹80</div></div>
-      <div class="menu-item"><div class="mi-name">Oreo</div><div class="mi-price">₹80</div></div>
+    <div class="menu-panel-header">
+      <img src="images/storefront.jpeg" alt="Milkshakes" class="menu-panel-img" loading="lazy">
+      <div class="menu-panel-info"><h3>🥤 Milkshakes</h3><p>Thick, creamy, delicious shakes to cool you down.</p></div>
     </div>
+    <div class="menu-items" id="menuShakesList"></div>
   </div>
 </section>
 
+<!-- ═══════════════════ GALLERY ═══════════════════ -->
 <section class="gallery" id="gallery">
   <div class="gallery-header reveal">
     <div class="sec-label">From Our Counter</div>
@@ -349,6 +291,7 @@
   </div>
 </section>
 
+<!-- ═══════════════════ ABOUT ═══════════════════ -->
 <section class="about" id="about">
   <div class="about-imgs reveal">
     <div class="a-img1"><img src="images/interior.jpeg" alt="Magnum Bakes interior — clean dine-in area" loading="lazy"></div>
@@ -367,6 +310,7 @@
   </div>
 </section>
 
+<!-- ═══════════════════ REVIEWS ═══════════════════ -->
 <section class="reviews" id="reviews">
   <div class="sec-label reveal">Real Customers</div>
   <h2 class="sec-title reveal d1">What People <em>Say</em></h2>
@@ -401,6 +345,7 @@
   </div>
 </section>
 
+<!-- ═══════════════════ CTA STRIP ═══════════════════ -->
 <div class="cta-strip">
   <div>
     <h2>Order Your Custom Cake Today</h2>
@@ -412,6 +357,7 @@
   </div>
 </div>
 
+<!-- ═══════════════════ CONTACT ═══════════════════ -->
 <section class="contact" id="contact">
   <div class="sec-label reveal">Find Us</div>
   <h2 class="sec-title reveal d1">Visit <em>Our Bakery</em></h2>
@@ -429,6 +375,7 @@
   </div>
 </section>
 
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
 <footer>
   <div class="footer-grid">
     <div class="f-brand">
@@ -465,7 +412,7 @@
   </div>
 </footer>
 
-<!-- WhatsApp Floating Button — proper SVG logo -->
+<!-- ═══════════════════ WHATSAPP FLOAT ═══════════════════ -->
 <a href="https://wa.me/919346693818?text=Hi%20Magnum%20Bakes%2C%20I%27d%20like%20to%20place%20an%20order!" target="_blank" rel="noopener" class="wa-btn" title="Order on WhatsApp">
   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
     <path d="M16 0C7.163 0 0 7.163 0 16c0 2.82.737 5.469 2.027 7.77L0 32l8.473-2.007A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.29 13.29 0 0 1-6.773-1.853l-.486-.289-5.027 1.191 1.215-4.888-.317-.502A13.262 13.262 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.293-9.907c-.4-.2-2.365-1.167-2.731-1.3-.366-.133-.633-.2-.9.2-.267.4-1.032 1.3-1.267 1.566-.233.267-.467.3-.867.1-.4-.2-1.688-.622-3.215-1.984-1.188-1.06-1.99-2.369-2.223-2.769-.233-.4-.025-.616.175-.815.18-.178.4-.467.6-.7.2-.233.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.167-1.233-2.967-.325-.78-.655-.674-.9-.686l-.767-.013c-.267 0-.7.1-1.067.5-.366.4-1.4 1.367-1.4 3.334s1.433 3.867 1.633 4.133c.2.267 2.82 4.307 6.833 6.034.955.412 1.7.659 2.282.843.959.305 1.832.262 2.522.159.769-.115 2.365-.967 2.699-1.9.333-.933.333-1.733.233-1.9-.1-.167-.366-.267-.766-.467z"/>
