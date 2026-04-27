@@ -43,11 +43,11 @@ function productAlt(product) {
 // ── Product Data ──────────────────────────────────────────────────
 
 const CAKES = [
-  { name: 'Pineapple',    price: '₹250 (½kg) / ₹500 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Pineapple Cake.jpg' },
-  { name: 'Butterscotch', price: '₹275 (½kg) / ₹550 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Butterscotch Cake.jpg' },
-  { name: 'Blackforest',  price: '₹300 (½kg) / ₹600 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Black Forest Cake.jpg' },
-  { name: 'Chocolate',    price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Chocolate Cake.jpg' },
-  { name: 'Honey Almond', price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Honey Almond Cake.jpg' },
+  { name: 'Pineapple',    price: '₹250 (½kg) / ₹500 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Pineapple Cake.jpg', tag: 'Fresh Today' },
+  { name: 'Butterscotch', price: '₹275 (½kg) / ₹550 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Butterscotch Cake.jpg', tag: 'Best Seller' },
+  { name: 'Blackforest',  price: '₹300 (½kg) / ₹600 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Black Forest Cake.jpg', tag: 'Best Seller' },
+  { name: 'Chocolate',    price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Chocolate Cake.jpg', tag: 'Custom Available' },
+  { name: 'Honey Almond', price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Honey Almond Cake.jpg', tag: 'Premium' },
   { name: 'Blueberry',    price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg' },
   { name: 'Red Velvet',   price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg' },
 ];
@@ -164,16 +164,18 @@ const SHAKES = [
 // ── Renderers ─────────────────────────────────────────────────────
 
 // Product cards with item-specific Order Now buttons
-function renderMenuItems(containerId, products, fallbackImage) {
+function renderMenuItems(containerId, products, fallbackImage, defaultTag = '') {
   const el = document.getElementById(containerId);
   if (!el) return;
   el.innerHTML = products.map(p => {
     const details = p.details || '';
     const price = p.price || '';
+    const tag = p.tag || defaultTag;
     return `
       <div class="menu-item product-card">
         <div class="product-card-img">
           <img src="${escapeHtml(productImage(p, fallbackImage))}" alt="${escapeHtml(productAlt(p))}" loading="lazy">
+          ${tag ? `<div class="product-card-tag">${escapeHtml(tag)}</div>` : ''}
         </div>
         <div class="product-card-body">
           <div class="mi-name">${escapeHtml(p.name)}</div>
@@ -231,18 +233,18 @@ function renderAll() {
   renderBiscuitGrid('bisGrid');
 
   // All menu panels
-  renderMenuItems('menuCakeList',       CAKES, 'images/cakes-display.jpeg');
-  renderMenuItems('menuPastriesList',   PASTRIES, 'images/cakes-display.jpeg');
-  renderMenuItems('menuBiscuitsList',   BISCUITS, 'images/biscuits.jpeg');
-  renderMenuItems('menuPuffsList',      PUFFS, 'images/cakes-display.jpeg');
-  renderMenuItems('menuPizzaList',      PIZZA, 'images/storefront.jpeg');
-  renderMenuItems('menuBurgersList',    BURGERS, 'images/storefront.jpeg');
-  renderMenuItems('menuSandwichesList', SANDWICHES, 'images/storefront.jpeg');
-  renderMenuItems('menuFrankiesList',   FRANKIES, 'images/storefront.jpeg');
-  renderMenuItems('menuSnacksList',     SNACKS, 'images/storefront.jpeg');
-  renderMenuItems('menuFriedList',      FRIED, 'images/storefront.jpeg');
-  renderMenuItems('menuMojitosList',    MOJITOS, 'images/storefront.jpeg');
-  renderMenuItems('menuShakesList',     SHAKES, 'images/storefront.jpeg');
+  renderMenuItems('menuCakeList',       CAKES, 'images/cakes-display.jpeg', 'Custom Available');
+  renderMenuItems('menuPastriesList',   PASTRIES, 'images/cakes-display.jpeg', 'Fresh Today');
+  renderMenuItems('menuBiscuitsList',   BISCUITS, 'images/biscuits.jpeg', 'Per Kg');
+  renderMenuItems('menuPuffsList',      PUFFS, 'images/cakes-display.jpeg', 'Fresh Today');
+  renderMenuItems('menuPizzaList',      PIZZA, 'images/storefront.jpeg', 'Made to Order');
+  renderMenuItems('menuBurgersList',    BURGERS, 'images/storefront.jpeg', 'Hot & Fresh');
+  renderMenuItems('menuSandwichesList', SANDWICHES, 'images/storefront.jpeg', 'Grilled Fresh');
+  renderMenuItems('menuFrankiesList',   FRANKIES, 'images/storefront.jpeg', 'Rolled Fresh');
+  renderMenuItems('menuSnacksList',     SNACKS, 'images/storefront.jpeg', 'Quick Bite');
+  renderMenuItems('menuFriedList',      FRIED, 'images/storefront.jpeg', 'Crispy');
+  renderMenuItems('menuMojitosList',    MOJITOS, 'images/storefront.jpeg', 'Chilled');
+  renderMenuItems('menuShakesList',     SHAKES, 'images/storefront.jpeg', 'Fresh Blend');
 }
 
 // ── Nav scroll behaviour ──────────────────────────────────────────

@@ -34,6 +34,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 4%;display:flex;a
 nav.scrolled{height:54px;box-shadow:0 4px 20px rgba(0,0,0,.35)}
 .nav-logo{display:flex;align-items:center;gap:9px}
 .nav-logo-icon{width:40px;height:40px;border-radius:50%;background:var(--brand-org);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.nav-logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;background:var(--cream);border:2px solid var(--gold);box-shadow:0 4px 14px rgba(0,0,0,.28);flex-shrink:0}
 .nav-logo-text .brand{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:800;color:var(--cream)}
 .nav-logo-text .sub{font-size:.55rem;letter-spacing:2.5px;color:var(--gold-lt);text-transform:uppercase}
 .nav-links{display:none;align-items:center;gap:24px}
@@ -65,9 +66,13 @@ nav.scrolled{height:54px;box-shadow:0 4px 20px rgba(0,0,0,.35)}
 .hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,8vw,4.8rem);font-weight:800;color:var(--cream);line-height:1.08;margin-bottom:10px;opacity:0;animation:fadeUp .9s .35s forwards}
 .hero-h1 em{font-style:italic;color:var(--brand-org);display:block}
 .hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,3vw,1.15rem);font-style:italic;color:rgba(250,240,220,.6);line-height:1.65;margin-bottom:24px;opacity:0;animation:fadeUp .9s .5s forwards;max-width:480px}
-.hero-badges{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:28px;opacity:0;animation:fadeUp .9s .65s forwards}
+.hero-badges{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px;opacity:0;animation:fadeUp .9s .65s forwards}
 .badge{display:flex;align-items:center;gap:7px;font-size:.73rem;color:rgba(250,240,220,.65)}
 .badge-dot{width:5px;height:5px;border-radius:50%;background:var(--brand-org);flex-shrink:0}
+.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:24px;max-width:520px;opacity:0;animation:fadeUp .9s .72s forwards}
+.hero-proof div{padding:10px 12px;background:rgba(250,240,220,.06);border:1px solid rgba(200,146,10,.22);border-radius:var(--radius-sm)}
+.hero-proof strong{display:block;color:var(--gold-lt);font-family:'Playfair Display',serif;font-size:1rem;line-height:1.1}
+.hero-proof span{display:block;margin-top:3px;color:rgba(250,240,220,.58);font-size:.62rem;letter-spacing:1px;text-transform:uppercase;line-height:1.3}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp .9s .8s forwards}
 .hero-visual{position:relative;width:100%;height:260px;overflow:hidden;flex-shrink:0}
 .hero-img-wrap{position:absolute;inset:0;opacity:0;animation:fadeIn 1.2s .3s forwards}
@@ -76,6 +81,7 @@ nav.scrolled{height:54px;box-shadow:0 4px 20px rgba(0,0,0,.35)}
 .hero-float{position:absolute;bottom:16px;right:16px;background:rgba(44,21,7,.9);border:1px solid rgba(200,146,10,.45);padding:12px 18px;border-radius:var(--radius-sm);backdrop-filter:blur(8px);opacity:0;animation:fadeUp .8s 1.2s forwards}
 .hero-float .f-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:var(--gold-lt);line-height:1}
 .hero-float .f-txt{font-size:.6rem;letter-spacing:2px;color:rgba(250,240,220,.55);text-transform:uppercase;margin-top:2px}
+.hero-float .f-note{font-size:.66rem;color:rgba(250,240,220,.7);margin-top:6px;max-width:150px;line-height:1.35}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -162,14 +168,15 @@ section{padding:60px 6%}
 .menu-panel-info h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--choc);margin-bottom:4px}
 .menu-panel-info p{font-size:.75rem;color:var(--text-lt);line-height:1.4}
 .menu-items{display:grid;gap:14px;grid-column:1/-1}
-.menu-item{background:#fff;border:1px solid rgba(200,146,10,.12);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-sm);transition:all .3s}
-.menu-item:hover{border-color:rgba(200,146,10,.28);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.menu-item{background:#fff;border:1px solid rgba(200,146,10,.14);border-radius:var(--radius-sm);overflow:hidden;box-shadow:0 8px 26px rgba(44,21,7,.08);transition:all .3s}
+.menu-item:hover{border-color:rgba(200,146,10,.32);box-shadow:0 14px 34px rgba(44,21,7,.13);transform:translateY(-2px)}
 .product-card{display:flex;flex-direction:column;min-width:0}
-.product-card-img{width:100%;aspect-ratio:4/3;background:var(--cream2);overflow:hidden}
+.product-card-img{width:100%;aspect-ratio:4/3;background:var(--cream2);overflow:hidden;position:relative}
 .product-card-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s}
 .menu-item:hover .product-card-img img{transform:scale(1.04)}
-.product-card-body{display:flex;flex-direction:column;gap:6px;padding:12px;min-height:150px}
-.mi-name{font-family:'Playfair Display',serif;font-size:.88rem;font-weight:700;color:var(--choc)}
+.product-card-tag{position:absolute;top:10px;left:10px;background:rgba(44,21,7,.9);color:var(--gold-lt);border:1px solid rgba(224,184,74,.5);border-radius:var(--radius-sm);padding:5px 8px;font-size:.56rem;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.product-card-body{display:flex;flex-direction:column;gap:7px;padding:13px;min-height:164px}
+.mi-name{font-family:'Playfair Display',serif;font-size:.96rem;font-weight:700;color:var(--choc);line-height:1.2}
 .mi-price{font-weight:700;color:var(--brand-org2);white-space:nowrap;font-size:.88rem}
 .mi-details{font-size:.72rem;color:var(--text-lt);line-height:1.45}
 
@@ -245,6 +252,7 @@ footer{background:var(--choc);padding:48px 6% 24px}
 .f-brand-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:800;color:var(--cream)}
 .f-brand-sub{font-size:.58rem;letter-spacing:2.5px;color:var(--gold-lt);text-transform:uppercase;margin-bottom:12px}
 .f-brand p{font-size:.78rem;color:rgba(250,240,220,.48);line-height:1.7;margin-bottom:18px}
+.footer-logo-img{width:48px;height:48px;border-radius:50%;object-fit:cover;background:var(--cream);border:2px solid var(--gold);flex-shrink:0}
 .social-row{display:flex;gap:8px}
 .soc{width:34px;height:34px;border:1px solid rgba(200,146,10,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:all .3s}
 .soc:hover{border-color:var(--gold-lt);background:rgba(200,146,10,.1)}
@@ -276,6 +284,7 @@ footer{background:var(--choc);padding:48px 6% 24px}
   0%,100%{box-shadow:0 6px 20px rgba(37,211,102,.45)}
   50%{box-shadow:0 6px 28px rgba(37,211,102,.65),0 0 0 7px rgba(37,211,102,.12)}
 }
+.mobile-order-bar{display:none}
 
 /* ================================================================
    ORDERING SYSTEM — Order Now buttons
@@ -328,7 +337,7 @@ footer{background:var(--choc);padding:48px 6% 24px}
 
 /* Smaller variant for menu panels */
 .cake-order-btn--sm {
-  min-height: 38px;
+  min-height: 42px;
   justify-content: center;
   width: 100%;
   margin-top: auto;
@@ -360,6 +369,26 @@ footer{background:var(--choc);padding:48px 6% 24px}
     align-items: flex-end;
     gap: 5px;
   }
+}
+
+@media (max-width: 639px) {
+  body{padding-bottom:72px}
+  .hero-proof{grid-template-columns:1fr 1fr}
+  .hero-proof div:first-child{grid-column:1/-1}
+  .hero-btns a{flex:1 1 100%;text-align:center}
+  .mobile-order-bar{
+    position:fixed;left:10px;right:10px;bottom:10px;z-index:950;
+    display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:6px;
+    padding:7px;background:rgba(44,21,7,.96);border:1px solid rgba(200,146,10,.35);
+    border-radius:var(--radius-sm);box-shadow:0 12px 32px rgba(0,0,0,.35);backdrop-filter:blur(10px)
+  }
+  .mobile-order-bar a{
+    min-height:42px;display:flex;align-items:center;justify-content:center;
+    color:var(--cream);font-size:.7rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+    border-radius:var(--radius-sm);border:1px solid rgba(250,240,220,.12)
+  }
+  .mobile-order-bar a:nth-child(2){background:var(--brand-org);color:#fff;border-color:var(--brand-org)}
+  .wa-btn{display:none}
 }
 
 /* ═══════════════════════ TABLET ≥ 640px ═══════════════════════ */
