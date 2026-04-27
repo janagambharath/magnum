@@ -34,7 +34,8 @@ function escapeHtml(value = '') {
 
 const ONLINE_PRODUCT_IMAGES = {
   cake: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80',
-  redVelvetCake: 'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&w=900&q=80',
+  redVelvetCake: 'https://images.pexels.com/photos/6133311/pexels-photo-6133311.jpeg?auto=compress&cs=tinysrgb&w=900',
+  blueberryCake: 'https://images.pexels.com/photos/3450560/pexels-photo-3450560.jpeg?auto=compress&cs=tinysrgb&w=900',
   pastry: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80',
   chocolateDessert: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80',
   donut: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80',
@@ -54,10 +55,10 @@ const ONLINE_PRODUCT_IMAGES = {
 
 const ONLINE_IMAGE_RULES = [
   { test: /red velvet/i, image: ONLINE_PRODUCT_IMAGES.redVelvetCake },
+  { test: /blueberry|blue berry/i, image: ONLINE_PRODUCT_IMAGES.blueberryCake },
   { test: /donut/i, image: ONLINE_PRODUCT_IMAGES.donut },
   { test: /choco lava|chocolate pastry/i, image: ONLINE_PRODUCT_IMAGES.chocolateDessert },
   { test: /pastry|rasamalai/i, image: ONLINE_PRODUCT_IMAGES.pastry },
-  { test: /blueberry|blue berry/i, image: ONLINE_PRODUCT_IMAGES.cake },
   { test: /biscuit|osmania|salt|chand|badam|vanilla|choco chip|pista|kaju|almond/i, image: ONLINE_PRODUCT_IMAGES.biscuits },
   { test: /puff/i, image: ONLINE_PRODUCT_IMAGES.puff },
   { test: /pizza/i, image: ONLINE_PRODUCT_IMAGES.pizza },
@@ -93,8 +94,8 @@ const CAKES = [
   { name: 'Blackforest',  price: '₹300 (½kg) / ₹600 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Black Forest Cake.jpg', tag: 'Best Seller' },
   { name: 'Chocolate',    price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Chocolate Cake.jpg', tag: 'Custom Available' },
   { name: 'Honey Almond', price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Honey Almond Cake.jpg', tag: 'Premium' },
-  { name: 'Blueberry',    price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg' },
-  { name: 'Red Velvet',   price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg' },
+  { name: 'Blueberry',    price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg', img: ONLINE_PRODUCT_IMAGES.blueberryCake },
+  { name: 'Red Velvet',   price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg', img: ONLINE_PRODUCT_IMAGES.redVelvetCake },
 ];
 
 const PASTRIES = [
