@@ -10,32 +10,52 @@ const WA_NUMBER = '919346693818';
 
 // ── Build WhatsApp URL ────────────────────────────────────────────
 function waUrl(name, priceStr, details = '') {
-  const msg =
-    `Hi Magnum Bakes & Cakes! 🎂\n\n` +
-    `I'd like to order:\n` +
-    `*${name}*\n` +
-    `Price: ${priceStr}` +
-    (details ? `\n${details}` : '') +
-    `\n\nPlease confirm availability and let me know the next steps. Thank you!`;
-  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+  const lines = [
+    'Hi Magnum Bakes & Cakes!',
+    '',
+    'I want to order this product.',
+    `Product: ${name}`,
+  ];
+  if (priceStr) lines.push(`Price: ${priceStr}`);
+  if (details) lines.push(`Details: ${details}`);
+  lines.push('', 'Please confirm availability and let me know the next steps.');
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
+}
+
+function escapeHtml(value = '') {
+  return String(value).replace(/[&<>"']/g, char => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  }[char]));
+}
+
+function productImage(product, fallback) {
+  return product.img || fallback || 'images/storefront.jpeg';
+}
+
+function productAlt(product) {
+  return `${product.name} at Magnum Bakes and Cakes`;
 }
 
 // ── Product Data ──────────────────────────────────────────────────
 
 const CAKES = [
-  { name: 'Pineapple',    price: '₹250 (½kg) / ₹500 (1kg)',  details: 'Available in ½kg and 1kg' },
-  { name: 'Butterscotch', price: '₹275 (½kg) / ₹550 (1kg)',  details: 'Available in ½kg and 1kg' },
-  { name: 'Blackforest',  price: '₹300 (½kg) / ₹600 (1kg)',  details: 'Available in ½kg and 1kg' },
-  { name: 'Chocolate',    price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg' },
-  { name: 'Honey Almond', price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg' },
+  { name: 'Pineapple',    price: '₹250 (½kg) / ₹500 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Pineapple Cake.jpg' },
+  { name: 'Butterscotch', price: '₹275 (½kg) / ₹550 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Butterscotch Cake.jpg' },
+  { name: 'Blackforest',  price: '₹300 (½kg) / ₹600 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Black Forest Cake.jpg' },
+  { name: 'Chocolate',    price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Chocolate Cake.jpg' },
+  { name: 'Honey Almond', price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg', img: 'images/products/Honey Almond Cake.jpg' },
   { name: 'Blueberry',    price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg' },
   { name: 'Red Velvet',   price: '₹400 (½kg) / ₹800 (1kg)',  details: 'Available in ½kg and 1kg' },
 ];
 
 const PASTRIES = [
-  { name: 'Pineapple Pastry',    price: '₹40' },
-  { name: 'Butterscotch Pastry', price: '₹45' },
-  { name: 'Blackforest Pastry',  price: '₹55' },
+  { name: 'Pineapple Pastry',    price: '₹40', img: 'images/products/Pineapple Pastry.jpg' },
+  { name: 'Butterscotch Pastry', price: '₹45', img: 'images/products/Butterscotch Pastry.jpg' },
+  { name: 'Blackforest Pastry',  price: '₹55', img: 'images/products/Black Forest Pastry.jpg' },
   { name: 'Chocolate Pastry',    price: '₹70' },
   { name: 'Choco Lava',          price: '₹70' },
   { name: 'Honey Almond Pastry', price: '₹80' },
@@ -120,11 +140,11 @@ const FRIED = [
 
 const MOJITOS = [
   { name: 'Lime Mojito',          price: '₹60' },
-  { name: 'Green Mint Mojito',    price: '₹60' },
-  { name: 'Blue Ocean Mojito',    price: '₹60' },
+  { name: 'Green Mint Mojito',    price: '₹60', img: 'images/products/Green Mint Mojito.jpg' },
+  { name: 'Blue Ocean Mojito',    price: '₹60', img: 'images/products/Blue Ocean Mojito.jpg' },
   { name: 'Strawberry Mojito',    price: '₹60' },
   { name: 'Black Current Mojito', price: '₹60' },
-  { name: 'Rose Mojito',          price: '₹60' },
+  { name: 'Rose Mojito',          price: '₹60', img: 'images/products/Rose Mojito.jpg' },
   { name: 'Pineapple Mojito',     price: '₹60' },
 ];
 
@@ -143,21 +163,29 @@ const SHAKES = [
 
 // ── Renderers ─────────────────────────────────────────────────────
 
-// Standard menu-item row with Order Now button
-function renderMenuItems(containerId, products) {
+// Product cards with item-specific Order Now buttons
+function renderMenuItems(containerId, products, fallbackImage) {
   const el = document.getElementById(containerId);
   if (!el) return;
-  el.innerHTML = products.map(p => `
-    <div class="menu-item">
-      <div class="mi-name">${p.name}</div>
-      <div class="menu-item-right">
-        <div class="mi-price">${p.price}</div>
-        <a href="${waUrl(p.name, p.price, p.details || '')}"
-           target="_blank" rel="noopener"
-           class="cake-order-btn cake-order-btn--sm"
-           aria-label="Order ${p.name} on WhatsApp">Order Now</a>
-      </div>
-    </div>`).join('');
+  el.innerHTML = products.map(p => {
+    const details = p.details || '';
+    const price = p.price || '';
+    return `
+      <div class="menu-item product-card">
+        <div class="product-card-img">
+          <img src="${escapeHtml(productImage(p, fallbackImage))}" alt="${escapeHtml(productAlt(p))}" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <div class="mi-name">${escapeHtml(p.name)}</div>
+          ${price ? `<div class="mi-price">${escapeHtml(price)}</div>` : ''}
+          ${details ? `<div class="mi-details">${escapeHtml(details)}</div>` : ''}
+          <a href="${waUrl(p.name, price, details)}"
+             target="_blank" rel="noopener"
+             class="cake-order-btn cake-order-btn--sm"
+             aria-label="Order ${escapeHtml(p.name)} on WhatsApp">Order Now</a>
+        </div>
+      </div>`;
+  }).join('');
 }
 
 // Cake showcase rows (wider layout)
@@ -166,13 +194,13 @@ function renderShowcaseCakes(containerId) {
   if (!el) return;
   el.innerHTML = CAKES.map(p => `
     <div class="cake-row">
-      <span class="ck-name">${p.name}</span>
+      <span class="ck-name">${escapeHtml(p.name)}</span>
       <div class="cake-row-right">
-        <span class="ck-price">${p.price.replace(' (½kg)', '').replace(' (1kg)', '').split('/')[0].trim()} / ${p.price.split('/')[1] ? p.price.split('/')[1].replace('(1kg)','').trim() : ''}</span>
+        <span class="ck-price">${escapeHtml(p.price.replace(' (½kg)', '').replace(' (1kg)', '').split('/')[0].trim())} / ${p.price.split('/')[1] ? escapeHtml(p.price.split('/')[1].replace('(1kg)','').trim()) : ''}</span>
         <a href="${waUrl(p.name + ' Cake', p.price, p.details)}"
            target="_blank" rel="noopener"
            class="cake-order-btn"
-           aria-label="Order ${p.name} Cake on WhatsApp">Order Now</a>
+           aria-label="Order ${escapeHtml(p.name)} Cake on WhatsApp">Order Now</a>
       </div>
     </div>`).join('');
 }
@@ -184,13 +212,13 @@ function renderBiscuitGrid(containerId) {
   el.innerHTML = BISCUITS.map((p, i) => `
     <div class="bis-item${i >= 6 ? ' featured' : ''}">
       <div class="bis-left">
-        <span class="bi-name">${p.name}</span>
-        <span class="bi-price">${p.price}</span>
+        <span class="bi-name">${escapeHtml(p.name)}</span>
+        <span class="bi-price">${escapeHtml(p.price)}</span>
       </div>
       <a href="${waUrl(p.name + ' Biscuits', p.price, p.details)}"
          target="_blank" rel="noopener"
          class="cake-order-btn cake-order-btn--ghost"
-         aria-label="Order ${p.name} Biscuits on WhatsApp">Order</a>
+         aria-label="Order ${escapeHtml(p.name)} Biscuits on WhatsApp">Order Now</a>
     </div>`).join('');
 }
 
@@ -203,18 +231,18 @@ function renderAll() {
   renderBiscuitGrid('bisGrid');
 
   // All menu panels
-  renderMenuItems('menuCakeList',       CAKES);
-  renderMenuItems('menuPastriesList',   PASTRIES);
-  renderMenuItems('menuBiscuitsList',   BISCUITS);
-  renderMenuItems('menuPuffsList',      PUFFS);
-  renderMenuItems('menuPizzaList',      PIZZA);
-  renderMenuItems('menuBurgersList',    BURGERS);
-  renderMenuItems('menuSandwichesList', SANDWICHES);
-  renderMenuItems('menuFrankiesList',   FRANKIES);
-  renderMenuItems('menuSnacksList',     SNACKS);
-  renderMenuItems('menuFriedList',      FRIED);
-  renderMenuItems('menuMojitosList',    MOJITOS);
-  renderMenuItems('menuShakesList',     SHAKES);
+  renderMenuItems('menuCakeList',       CAKES, 'images/cakes-display.jpeg');
+  renderMenuItems('menuPastriesList',   PASTRIES, 'images/cakes-display.jpeg');
+  renderMenuItems('menuBiscuitsList',   BISCUITS, 'images/biscuits.jpeg');
+  renderMenuItems('menuPuffsList',      PUFFS, 'images/cakes-display.jpeg');
+  renderMenuItems('menuPizzaList',      PIZZA, 'images/storefront.jpeg');
+  renderMenuItems('menuBurgersList',    BURGERS, 'images/storefront.jpeg');
+  renderMenuItems('menuSandwichesList', SANDWICHES, 'images/storefront.jpeg');
+  renderMenuItems('menuFrankiesList',   FRANKIES, 'images/storefront.jpeg');
+  renderMenuItems('menuSnacksList',     SNACKS, 'images/storefront.jpeg');
+  renderMenuItems('menuFriedList',      FRIED, 'images/storefront.jpeg');
+  renderMenuItems('menuMojitosList',    MOJITOS, 'images/storefront.jpeg');
+  renderMenuItems('menuShakesList',     SHAKES, 'images/storefront.jpeg');
 }
 
 // ── Nav scroll behaviour ──────────────────────────────────────────
