@@ -126,11 +126,23 @@ section{padding:60px 6%}
 .biscuits-section::before{content:'';position:absolute;top:-80px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(200,146,10,.07) 0%,transparent 70%);pointer-events:none}
 .biscuits-inner{display:flex;flex-direction:column;gap:32px}
 .biscuit-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
-.bis-item{background:rgba(255,255,255,.05);border:1px solid rgba(200,146,10,.15);border-radius:var(--radius-sm);padding:11px 12px;display:flex;justify-content:space-between;align-items:center;transition:all .3s}
+/* Biscuit grid item: name+price left, order button right */
+.bis-item{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(200,146,10,.15);
+  border-radius:var(--radius-sm);
+  padding:10px 12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  transition:all .3s;
+}
 .bis-item:hover{background:rgba(200,146,10,.1);border-color:rgba(200,146,10,.35)}
 .bis-item.featured{border-color:rgba(200,146,10,.35);background:rgba(200,146,10,.07)}
-.bi-name{font-family:'Playfair Display',serif;font-size:.8rem;font-weight:700;color:var(--cream)}
-.bi-price{font-size:.7rem;color:var(--gold-lt);font-weight:600;white-space:nowrap}
+.bis-left{display:flex;flex-direction:column;gap:2px;min-width:0}
+.bi-name{font-family:'Playfair Display',serif;font-size:.8rem;font-weight:700;color:var(--cream);display:block}
+.bi-price{font-size:.68rem;color:var(--gold-lt);font-weight:600;white-space:nowrap;display:block}
 .biscuits-img{position:relative;border-radius:var(--radius-md);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5)}
 .biscuits-img img{width:100%;height:260px;object-fit:cover;object-position:center}
 .biscuits-label{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(to top,rgba(44,21,7,.85),transparent);font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--cream);font-size:.9rem;text-align:center}
@@ -259,6 +271,87 @@ footer{background:var(--choc);padding:48px 6% 24px}
   50%{box-shadow:0 6px 28px rgba(37,211,102,.65),0 0 0 7px rgba(37,211,102,.12)}
 }
 
+/* ================================================================
+   ORDERING SYSTEM — Order Now buttons
+================================================================ */
+
+/* Right side wrapper in showcase cake rows */
+.cake-row-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Right side wrapper in menu panel rows */
+.menu-item-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ── Base Order Now button ── */
+.cake-order-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  background: var(--brand-org);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: background .25s, transform .2s, box-shadow .25s;
+  text-decoration: none;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.cake-order-btn:hover {
+  background: var(--gold);
+  color: var(--choc);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(200,146,10,.3);
+}
+.cake-order-btn:active {
+  transform: translateY(0);
+}
+
+/* Smaller variant for menu panels */
+.cake-order-btn--sm {
+  padding: 6px 11px;
+  font-size: .65rem;
+}
+
+/* Ghost variant for dark biscuit section */
+.cake-order-btn--ghost {
+  background: transparent;
+  color: var(--gold-lt);
+  border: 1px solid rgba(200,146,10,.45);
+  padding: 5px 10px;
+  font-size: .62rem;
+  flex-shrink: 0;
+}
+.cake-order-btn--ghost:hover {
+  background: var(--brand-org);
+  color: #fff;
+  border-color: var(--brand-org);
+  box-shadow: 0 4px 14px rgba(232,112,16,.4);
+}
+
+/* Very narrow phones: stack price + button vertically */
+@media (max-width: 360px) {
+  .cake-row-right,
+  .menu-item-right {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+  }
+}
+
 /* ═══════════════════════ TABLET ≥ 640px ═══════════════════════ */
 @media(min-width:640px){
   .hero{flex-direction:row;min-height:100vh}
@@ -304,69 +397,4 @@ footer{background:var(--choc);padding:48px 6% 24px}
   .biscuit-grid{grid-template-columns:1fr 1fr 1fr}
   .map-wrap{height:500px;min-height:500px}
   .map-wrap iframe{min-height:500px}
-}
-
-/* ================================================================
-   CAKE ORDERING SYSTEM — additions only, nothing else changed
-================================================================ */
-
-/* Showcase section: right side of each cake row */
-.cake-row-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-/* Menu panel: right side of each cake menu-item */
-.menu-item-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-/* Order Now button — base */
-.cake-order-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 7px 14px;
-  background: var(--brand-org);
-  color: #fff;
-  font-family: 'DM Sans', sans-serif;
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-radius: var(--radius-sm);
-  white-space: nowrap;
-  transition: background .25s, transform .2s, box-shadow .25s;
-  text-decoration: none;
-  flex-shrink: 0;
-  line-height: 1;
-}
-.cake-order-btn:hover {
-  background: var(--gold);
-  color: var(--choc);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(200,146,10,.3);
-}
-.cake-order-btn:active {
-  transform: translateY(0);
-}
-
-/* Smaller variant for the full menu panel */
-.cake-order-btn--sm {
-  padding: 6px 11px;
-  font-size: .65rem;
-}
-
-/* Very narrow phones: stack price + button vertically */
-@media (max-width: 360px) {
-  .cake-row-right,
-  .menu-item-right {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 5px;
-  }
 }
